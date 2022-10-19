@@ -1,4 +1,4 @@
-package graph;
+package graph.bipartite;
 import java.util.*;
 public class CheckBipartiteGraphBFS {
 
