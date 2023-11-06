@@ -65,6 +65,7 @@ public class CheckCycleDirectedGraphDFS {
                 if(checkCycleDfs(adjNode,adj,vis,dfsVis)) return true;
             } else if(vis[adjNode] && dfsVis[node]) return true;
         }
+        dfsVis[node] = false;
         return false;
     }
 }
