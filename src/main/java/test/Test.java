@@ -4,43 +4,53 @@ import java.util.*;
 
 public class Test {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int t = sc.nextInt();
-
-        while(t-- > 0){
-            long n = sc.nextLong();
-            boolean flag = false;
-            int count=0;
-            while(n%2 == 0){
-                n=n/2;
-                count++;
+        int n = 10;
+        for(int i=0; i<n; i++){
+            for(int j=0; j < i; j++){
+                // j is dependent on i
             }
-            if(count%2==1){
-                count--;
-                n*=2;
-            }
+        }
 
-            int a = (int)Math.sqrt(n/2);
-            int last = (int)Math.sqrt(n);
-            while(a <= last){
-                if(isPerfectSquare((n - (long) a*a))){
-                    int b = (int) Math.sqrt(n - (long) a *a);
-                    System.out.println(a*(int)Math.pow(2,count/2) + " " + b*(int)Math.pow(2,count/2));
-                    flag= true;
-                    break;
-                } else{
-                    a++;
+    }
+
+    public boolean isValidSudoku(char[][] board) {
+        HashMap<String, HashSet<Character>> map = new HashMap<>();
+        int m = board.length;
+        int n = board[0].length;
+
+        for (int i=0; i<m; i++){
+            for (int j=0; j<n; j++){
+                char c = board[i][j];
+                if(c == '.') continue;
+                //row check
+                String key = "r" + i;
+                if(map.get(key).contains(c)){
+                    return false;
+                } else {
+                    map.get(key).add(c);
+                }
+
+                //col check
+                key = "c" + j;
+                if(map.get(key).contains(c)){
+                    return false;
+                } else {
+                    map.get(key).add(c);
+                }
+
+                //box check
+                key = "r" + i/3 + "c" + j/3;
+                if(map.get(key).contains(c)){
+                    return false;
+                } else {
+                    map.get(key).add(c);
                 }
             }
-            if(!flag) System.out.println("-1");
         }
+        return true;
     }
-
-    public static boolean isPerfectSquare(long n){
-        int x = (int)Math.sqrt(n);
-        return Math.pow(x, 2) == n;
-    }
-
 }
+
+
 
 
