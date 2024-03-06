@@ -3,8 +3,6 @@ package sorting;
 public class MergeSort {
 
     public static void conquer(int[] arr, int start, int mid, int end){
-        if(start>end) return;
-
         int merged[] = new int[end-start+1];
         int idx1=start;
         int idx2=mid+1;
