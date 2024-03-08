@@ -4,24 +4,24 @@ import java.util.Scanner;
 
 public class CountingRooms {
 
-    public static int[][] A;
+    public static int[][] graph;
     public static boolean[][] visited;
     public static int m,n;
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-
-        m = sc.nextInt();
         n = sc.nextInt();
+        m = sc.nextInt();
         sc.nextLine();
-        A = new int[m][n];
-        visited = new boolean[m][n];
 
-        for(int i=0; i<m; i++){
+        graph = new int[n][m];
+        visited = new boolean[n][m];
+
+        for(int i=0; i<n; i++){
             String s = sc.nextLine();
             int j=0;
             for(char c: s.toCharArray()){
-                if(c == '.') A[i][j] = 1;
+                if(c=='.') graph[i][j]=1;
                 j++;
             }
         }
@@ -29,30 +29,28 @@ public class CountingRooms {
     }
 
     public static int countRooms(){
-        int count = 0;
-        for(int i=0; i<m; i++){
-            for(int j=0; j<n; j++){
-                if(A[i][j] == 1 && !visited[i][j]){
-                    dfs(i,j);
-                    count++;
+        int rooms=0;
+        for(int i=0; i<n; i++){
+            for(int j=0; j<m; j++){
+                if(graph[i][j]==1 && !visited[i][j]){
+                    dfs(i, j);
+                    rooms++;
                 }
             }
         }
-        return count;
+        return rooms;
     }
 
-    public static void dfs(int r, int c){
-        if(r<0 || r>=m) return;
-        if(c<0 || c>=n) return;
-        if(A[r][c] == 0) return;
-        if(visited[r][c]) return;
+    public static void dfs(int row, int col){
+        if(row<0 || row>=n || col<0 || col>=m) return;
+        if(graph[row][col]==0) return;
+        if(visited[row][col]) return;
 
-
-        visited[r][c] = true;
-        dfs(r+1, c);
-        dfs(r, c+1);
-        dfs(r-1, c);
-        dfs(r, c-1);
+        visited[row][col]=true;
+        dfs(row+1, col);
+        dfs(row-1,col);
+        dfs(row, col+1);
+        dfs(row, col-1);
     }
 
 
