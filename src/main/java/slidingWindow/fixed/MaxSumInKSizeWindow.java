@@ -1,6 +1,7 @@
 package slidingWindow.fixed;
 
 public class MaxSumInKSizeWindow {
+
     //All integers in array are positive
 
     public static int solve(int[] arr, int k){
@@ -26,6 +27,13 @@ public class MaxSumInKSizeWindow {
         int[] arr = new int[]{2, 5, 1, 8, 2, 9, 1};
         int k=3;
         System.out.println("Max sum in window size " + k + " is "+solve(arr,k));
+    }
+
+    public static void printArray(int[] A){
+        for(int a : A){
+            System.out.print(a + " ");
+        }
+        System.out.println(" ");
     }
 
 }
