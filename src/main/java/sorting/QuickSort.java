@@ -1,6 +1,6 @@
 package sorting;
 
-public class QuickSort {
+public class QuickSort implements Sorting{
     public static int partition(int[] arr, int start, int end){
         int pivot=arr[end];
         int pi=start-1;
@@ -21,26 +21,32 @@ public class QuickSort {
         return pi;
     }
 
-    public static void quickSort(int[] arr, int start, int end){
+    public void helper(int[] arr, int start, int end){
         if(start<end){
             int pivotIdx = partition(arr, start, end);
             //sorting rest of the parts after putting pivot in correct position
-            quickSort(arr, start, pivotIdx-1);
-            quickSort(arr, pivotIdx+1, end);
+            helper(arr, start, pivotIdx-1);
+            helper(arr, pivotIdx+1, end);
         }
     }
 
-    public static void swap(int[] arr, int i, int j){
-        int temp = arr[i];
-        arr[i]=arr[j];
-        arr[j]=temp;
+    @Override
+    public void sort(int[] arr){
+        helper(arr, 0, arr.length-1);
     }
+
+//    public static void swap(int[] arr, int i, int j){
+//        int temp = arr[i];
+//        arr[i]=arr[j];
+//        arr[j]=temp;
+//    }
 
     public static void main(String[] args) {
         int[] a = new int[]{1,3,5,7,9};
         int[] b = new int[]{2,4,6,8};
         int[] unsorted = new int[]{2,1,4,3,6,5,8,7,9};
-        quickSort(unsorted, 0, unsorted.length-1);
+        Sorting quickSort = new QuickSort();
+        quickSort.sort(unsorted);
         printArray(unsorted);
     }
 
@@ -50,4 +56,5 @@ public class QuickSort {
         }
         System.out.println(" ");
     }
+
 }

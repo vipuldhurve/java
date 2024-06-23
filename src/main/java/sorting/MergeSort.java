@@ -1,6 +1,6 @@
 package sorting;
 
-public class MergeSort {
+public class MergeSort implements Sorting {
 
     public static void conquer(int[] arr, int start, int mid, int end){
         int merged[] = new int[end-start+1];
@@ -28,21 +28,26 @@ public class MergeSort {
         }
     }
 
-    public static void sort(int[] arr, int start, int end){
+    public static void divide(int[] arr, int start, int end){
         if(start>=end) return;
         //divide
         int mid = start+(end-start)/2;
-        sort(arr, start, mid);
-        sort(arr, mid+1, end);
+        divide(arr, start, mid);
+        divide(arr, mid+1, end);
         //conquer
         conquer(arr, start, mid, end);
+    }
+    @Override
+    public void sort(int[] arr){
+        divide(arr, 0, arr.length-1);
     }
 
     public static void main(String[] args) {
         int[] a = new int[]{1,3,5,7,9};
         int[] b = new int[]{2,4,6,8};
         int[] unsorted = new int[]{2,1,4,3,6,5,8,7,9};
-        sort(unsorted, 0, unsorted.length-1);
+        Sorting mergeSort = new MergeSort();
+        mergeSort.sort(unsorted);
         printArray(unsorted);
     }
 
