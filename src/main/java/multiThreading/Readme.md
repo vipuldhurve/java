@@ -58,6 +58,6 @@ Spending more time in management(context switches) than real productive work
 ### Inherent cost of task parellelization and aggregation
 - (1. Dividing task into sub tasks) + (2. Thread creation and passing subtasks to thread) + (3. Time between Thread.start() to thread getting scheduled) + (4. Time until last thread finishes and signals) + (5. Time until aggregating thread runs) + (6. Aggregation of the subresults into a single artefact)
 <div align="center">
-  <img src="https://github.com/vipuldhurve/Code/src/main/java/single%20EAthreaded%20EAvs%20EAmultithreaded%20latency.png" alt="Image" style="display:block; margin:auto;">
+  <img src="https://github.com/vipuldhurve/Code/src/main/java/single%20threaded%20vs%20multithreaded%20latency.png" alt="Image" style="display:block; margin:auto;">
   <p style="position:absolute; bottom:0; text-align:center; width:100%;">This diagram illustrates the high-level structure and components of tripPlanner application.</p>
 </div>
