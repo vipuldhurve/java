@@ -48,5 +48,9 @@ Spending more time in management(context switches) than real productive work
 - Switching b/w threads in same process is faster(short context switches).
 
 ### When to prefer Multi Process
-- security and stability of higher priority as thread share data and a thread can bring down entire app.
-- tasks are unrrelated to each other
+- Security and stability of higher priority as thread share data and a thread can bring down entire app.
+- Tasks are unrrelated to each other
+
+### Hyper-Threading
+- A single physical core running two threads in parallel is achieved by  having some hardware units duplicated(so that threads can run in parallel) and some harware units are shared.
+- We can never run all threads 100 percent in parallel.
