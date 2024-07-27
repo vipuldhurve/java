@@ -1,4 +1,4 @@
-package multiThreading.Threads.daemon;
+package multiThreading.threads.daemon;
 
 import java.util.ArrayList;
 import java.util.Arrays;

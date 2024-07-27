@@ -1,4 +1,4 @@
-package multiThreading.Threads.daemon;
+package multiThreading.threads.daemon;
 
 public class DaemonThreadExample1 {
     public static void main(String[] args) {
