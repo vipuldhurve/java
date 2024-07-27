@@ -7,6 +7,11 @@ Why we need multi threading?
 Concurrency allows different parts of progam to make progress independently,
 often leading to better resource utilization and improved performance.
 
+<div align="center">
+  <img src="https://github.com/vipuldhurve/Code/blob/main/assets/process%20vs%20thread.jpeg" alt="Image" style="display:block; margin:auto;">
+  <p style="position:absolute; bottom:0; text-align:center; width:100%;">Process v/s Thread</p>
+</div>
+
 ## Process/Context - Instance of application
 - A process consists of
   - Metadata like id, priority etc.
