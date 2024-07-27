@@ -8,7 +8,7 @@ Concurrency allows different parts of progam to make progress independently,
 often leading to better resource utilization and improved performance.
 
 <div align="center">
-  <img src="https://github.com/vipuldhurve/Code/blob/main/assets/process%20vs%20thread.jfif" alt="Image" style="display:block; width:50%; height:auto; margin:auto;">
+  <img src="https://github.com/vipuldhurve/Code/blob/main/assets/process%20vs%20thread.jpg" alt="Image" style="display:block; width:50%; height:auto; margin:auto;">
   <p style="position:absolute; bottom:0; text-align:center; width:100%;">Process v/s Thread</p>
 </div>
 
