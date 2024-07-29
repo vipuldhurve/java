@@ -14,7 +14,7 @@ import java.util.concurrent.Executors;
 
 public class ThroughputHttpServer {
     private static final String INPUT_FILE = "src/main/java/multiThreading/examples/throughputHttpServer/war_and_peace.txt";
-    private static final int NUMBER_OF_THREADS= 1;
+    private static final int NUMBER_OF_THREADS = 1;
 
     public static void main(String[] args) throws IOException {
         String text = new String(Files.readAllBytes(Paths.get(INPUT_FILE)));
@@ -22,14 +22,14 @@ public class ThroughputHttpServer {
     }
 
     public static void startServer(String text) throws IOException {
-        HttpServer server = HttpServer.create(new InetSocketAddress(8000), 0 );
+        HttpServer server = HttpServer.create(new InetSocketAddress(8000), 0);
         server.createContext("/search", new WordCountHandler(text));
         Executor executor = Executors.newFixedThreadPool(NUMBER_OF_THREADS);
         server.setExecutor(executor);
         server.start();
     }
 
-    private static class WordCountHandler implements HttpHandler{
+    private static class WordCountHandler implements HttpHandler {
         private String text;
 
         public WordCountHandler(String text) {
@@ -42,7 +42,7 @@ public class ThroughputHttpServer {
             String[] keyValue = query.split("=");
             String action = keyValue[0];
             String word = keyValue[1];
-            if(!action.equals("word")){
+            if (!action.equals("word")) {
                 httpExchange.sendResponseHeaders(400, 0);
                 return;
             }
@@ -56,13 +56,13 @@ public class ThroughputHttpServer {
             outputStream.close();
         }
 
-        private long countWord(String word){
-            long count =0;
-            int index=0;
-            while(index>=0){
+        private long countWord(String word) {
+            long count = 0;
+            int index = 0;
+            while (index >= 0) {
                 index = text.indexOf(word, index);
 
-                if(index >= 0){
+                if (index >= 0) {
                     count++;
                     index++;
                 }
