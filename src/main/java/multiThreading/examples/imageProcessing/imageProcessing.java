@@ -4,6 +4,8 @@ import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class imageProcessing {
     public static final String SOURCE_FILE = "src/main/java/multiThreading/examples/imageProcessing/many-flowers.jpg";
@@ -14,11 +16,16 @@ public class imageProcessing {
         BufferedImage resultImage = new BufferedImage(originalImage.getWidth(), originalImage.getHeight(), BufferedImage.TYPE_INT_RGB);
 
         System.out.println("Recoloring image: white to purple flowers");
-        recolorSingleThreaded(originalImage, resultImage);
+        long startTime = System.currentTimeMillis();
+//        recolorSingleThreaded(originalImage, resultImage);
+        recolorMultiThreaded(originalImage, resultImage, 4);
+        long endTime = System.currentTimeMillis();
+        long duration = endTime - startTime;
 
         File outputFile = new File(DESTINATION_FILE);
         ImageIO.write(resultImage, "jpg", outputFile);
 
+        System.out.println("Duration of re-coloring process: " + duration + " millis");
 //        Open the result image with the default image viewer
 //        if (Desktop.isDesktopSupported()) {
 //            Desktop desktop = Desktop.getDesktop();
@@ -26,6 +33,34 @@ public class imageProcessing {
 //                desktop.open(outputFile);
 //            }
 //        }
+    }
+
+    public static void recolorMultiThreaded(BufferedImage originalImage, BufferedImage resultImage, int noOfThreads) {
+        List<Thread> threads = new ArrayList<>();
+        int width = originalImage.getWidth();
+        int height = originalImage.getHeight() / noOfThreads;
+
+        for (int i = 0; i < noOfThreads; i++) {
+            final int threadMultiplier = i;
+            Thread thread = new Thread(() -> {
+                int leftCorner = 0, topCorner = height * threadMultiplier;
+                recolorImage(originalImage, resultImage, leftCorner, topCorner, width, height);
+            });
+
+            threads.add(thread);
+        }
+
+        for (Thread thread : threads) {
+            thread.start();
+        }
+
+        for (Thread thread : threads) {
+            try {
+                thread.join();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     public static void recolorSingleThreaded(BufferedImage originalImage, BufferedImage resultImage) {

@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class DaemonThreadExample2 {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         MyThread t1 = new MyThread();
         MyThread t2 = new MyThread();
         MyThread t3 = new MyThread();
@@ -14,6 +14,7 @@ public class DaemonThreadExample2 {
 
 //        setting thread 1 as daemon
         t1.setDaemon(true);
+        t1.join();
 
 //        starting threads
         for(MyThread t: threads){
