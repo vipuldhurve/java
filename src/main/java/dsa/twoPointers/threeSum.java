@@ -24,20 +24,27 @@ public class threeSum {
 
         Arrays.sort(nums);
         for (int i = 0; i < nums.length; i++) {
+//            If nums[i] is same for previous we do i++ in order to avoid duplicates
             if (i > 0 && nums[i] == nums[i - 1]) continue;
             int j = i + 1;
             int k = nums.length - 1;
+//            We keep nums[i] fixed and ove j and k to check for targetSum
             while (j < k) {
                 int sum = nums[i] + nums[j] + nums[k];
+//                We do j++ to increase sum value
                 if (sum < 0) {
                     j++;
+//                We do k-- to decrease the sum value
                 } else if (sum > 0) {
                     k--;
+//                    if sum == 0 then add to ans
                 } else {
                     int[] temp = new int[]{nums[i], nums[j], nums[k]};
                     result.add(temp);
                     j++;
                     k--;
+//                    If nums[j] is same for previous we do j++ in order to avoid duplicates
+//                    If nums[k] is same for previous we do k-- in order to avoid duplicates
                     while (j < k && nums[j] == nums[j - 1]) j++;
                     while (j < k && nums[k] == nums[k + 1]) k--;
                 }
