@@ -24,51 +24,57 @@ public class LongestSubstringWithoutRepeatingChars {
 //    Explanation: The answer is "wke", with the length of 3.
 //    Notice that the answer must be a substring, "pwke" is a subsequence and not a substring.
 
-    public static String solve(String str){
+    public static String solve(String str) {
         if (str.isEmpty()) return "";
-        int left=0;
-        int right=0; 
+        int left = 0;
+        int right = 0;
 
         Map<Character, Integer> m = new HashMap<>();
-        int i=0;
-        int j=0;
+        int i = 0;
+        int j = 0;
 
-        while(right < str.length()){
+        while (right < str.length()) {
             char cr = str.charAt(right);
-            m.put(cr, m.getOrDefault(cr, 0)+1);
+            m.put(cr, m.getOrDefault(cr, 0) + 1);
 
-            if(m.size() == (right - left + 1) ){
-                if(right - left > j - i){
-                    i=left;
-                    j=right;
+            if (m.size() == (right - left + 1)) {
+                if (right - left > j - i) {
+                    i = left;
+                    j = right;
                 }
             } else {
-                while(m.size() < (right - left + 1) && left <= right){
+                while (m.size() < (right - left + 1) && left <= right) {
                     char cl = str.charAt(left);
-                    m.put(cl, m.get(cl)-1);
-                    if(m.get(cl)==0) m.remove(cl);
+                    m.put(cl, m.get(cl) - 1);
+                    if (m.get(cl) == 0) m.remove(cl);
                     left++;
                 }
-                //Check possibility of answer if currSum equals sum
-                if(m.size() == (right - left + 1)){
-                    if(right - left > j - i){
-                        i=left;
-                        j=right;
+//                Check possibility of answer if currSum equals sum
+                if (m.size() == (right - left + 1)) {
+                    if (right - left > j - i) {
+                        i = left;
+                        j = right;
                     }
                 }
             }
-            //Otherwise increasing window size (also in case of m.size() < k)
+//            Otherwise increasing window size (also in case of m.size() < k)
             right++;
         }
 
-        return str.substring(i, j+1);
+        return str.substring(i, j + 1);
     }
 
     public static void main(String[] args) {
-        String[] inputArr = new String[]{"dxaaabcayz", "abcabcbb", "bbbbb", "pwwkew"};
+        String[] inputArr = new String[]{
+                "dxaaabcayz",
+                "abcabcbb",
+                "bbbbb",
+                "pwwkew"};
+
         Arrays.stream(inputArr)
+                .peek(s -> System.out.println("Input: \"" + s + "\""))
                 .map(LongestSubstringWithoutRepeatingChars::solve)
-                .forEach( ans -> System.out.println("Longest substring size with all unique characters is \"" + ans +"\" with length = "+ ans.length()));
+                .forEach(ans -> System.out.println("Output: \"" + ans + "\" length = " + ans.length() + "\n"));
     }
 
 

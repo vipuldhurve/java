@@ -6,7 +6,8 @@ import java.util.stream.Collectors;
 public class MinimumWindowSubstring {
 
 //    Given two strings s and t of lengths m and n respectively,
-//    return the minimum window substring of s such that every character in t(including duplicates) is included in the window.
+//    return the minimum window substring of s such that
+//    every character in t(including duplicates) is included in the window.
 //    If there is no such substring, return the empty string "".
 
 //    Example 1:
@@ -25,8 +26,8 @@ public class MinimumWindowSubstring {
 //    Explanation: Both 'a's from t must be included in the window.
 //    Since the largest window of s only has one 'a', return empty string.
 
-    // Time Complexity: O(m+n)
-    public static String solve(String s, String t) {
+//    Time Complexity: O(m + n)
+    public static String minimumWindowSubstring(String s, String t) {
         if (t.isEmpty() || t.length() > s.length()) return "";
 
         int left = 0;
@@ -39,49 +40,64 @@ public class MinimumWindowSubstring {
                         Integer::sum));
         int count = m.size();
 
-        //ans
-        int i=0;
-        int j=0;
+//        ans
+        int i = 0;
+        int j = 0;
         int minLen = Integer.MAX_VALUE;
 
-        while(right < s.length()){
+        while (right < s.length()) {
             char cr = s.charAt(right);
-            // If map does not contain letter right++
-            // else If map contains do calcultaion
-            if(m.containsKey(cr)){
-                m.put(cr, m.get(cr)-1);
-                if(m.get(cr) == 0) count--;
+//            If map does not contain letter right++
+//            else If map contains do calcultaion
+            if (m.containsKey(cr)) {
+                m.put(cr, m.get(cr) - 1);
+                if (m.get(cr) == 0) count--;
             }
-            // Check value of count
-            if(count == 0){
-                while(count == 0){
+//            Check value of count
+            if (count == 0) {
+//                Try to optimize the solution by moving left
+                while (count == 0) {
                     char cl = s.charAt(left);
 
-                    if(m.containsKey(cl)){
-                        m.put(cl, m.get(cl)+1);
-                        if(m.get(cl)==1) count++;
+                    if (m.containsKey(cl)) {
+                        m.put(cl, m.get(cl) + 1);
+                        if (m.get(cl) == 1) count++;
 
-                        if(right - left + 1 < minLen){
+                        if (right - left + 1 < minLen) {
                             minLen = right - left + 1;
                             i = left;
                             j = right;
                         }
                     }
+//                    After doing calulations for left char removal removing it
                     left++;
                 }
             }
             right++;
         }
-        // If no valid window is found
-        if(minLen==Integer.MAX_VALUE) return "";
-        return s.substring(i, j+1);
+//        If no valid window is found
+        if (minLen == Integer.MAX_VALUE) return "";
+        return s.substring(i, j + 1);
+    }
+
+    private static void solve(String s, String t){
+        System.out.println("Input: s = \"" + s + "\"  t = \"" + t + "\"");
+        System.out.println("Output: \"" + minimumWindowSubstring(s,t) + "\" \n");
+
     }
 
     public static void main(String[] args) {
-        String s1 = "ADOBECODEBANC";
-        String t1 = "ABC";
-        String ans = solve(s1, t1);
-        System.out.println("The minimum window substring of s such that every character in t(including duplicates) is included in the window is => " + ans.length() + "  \"" + ans +"\"");
+        String s = "ADOBECODEBANC";
+        String t = "ABC";
+        solve(s, t);
+
+        s = "a";
+        t = "a";
+        solve(s, t);
+
+        s = "a";
+        t = "aa";
+        solve(s, t);
     }
 
 }
