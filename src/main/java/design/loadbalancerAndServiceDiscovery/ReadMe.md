@@ -16,7 +16,7 @@ A load balancer is a device or an application that distributes the network traff
 - HAProxy
 - AWS Elastic Load Balancer (ELB)
 - Google Cloud Load Balancing
-
+<br><br>
 
 ## Service Descovery
 Service discovery is a mechanism that enables services to find and communicate with each other within a distributed system. It automates the process of detecting and tracking service instances, making it easier to manage the dynamic and scalable environments.
