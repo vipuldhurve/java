@@ -35,7 +35,7 @@ Service discovery is a mechanism that enables services to find and communicate w
 - Eureka (Netflix)
 - Zookeeper
 - Etcd
-
+<br><br>
 ## Interaction between Load Balancer and Service Registry
 In a microservices architecture, load balancers and service discovery mechanisms often work together. Here’s how they typically interact:
 - <b>Service Registration:</b> When a service instance starts, it registers its address (e.g., IP and port) with the service registry.
