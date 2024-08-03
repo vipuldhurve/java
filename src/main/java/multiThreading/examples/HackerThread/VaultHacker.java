@@ -1,4 +1,4 @@
-package multiThreading.HackerThread;
+package multiThreading.examples.HackerThread;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -9,15 +9,17 @@ public class VaultHacker {
     private static final int MAX_PASSWORD = 9999;
 
     public static void main(String[] args) {
+//        Create random password generator and pass to vault object
         Random random = new Random();
         Vault vault = new Vault(random.nextInt(MAX_PASSWORD));
         System.out.println("Password is " + vault.password);
+//        Create hacker and police thread
         List<Thread> threads = new ArrayList<>(Arrays.asList(
                 new AscendingHacker(vault),
                 new DescendingHacker(vault),
                 new PoliceThread()
         ));
-
+//        Start hacker and police threads
         for (Thread thread : threads) {
             thread.start();
         }
@@ -33,6 +35,7 @@ public class VaultHacker {
             try {
                 Thread.sleep(5);
             } catch (InterruptedException e) {
+                e.printStackTrace();
             }
             return this.password == pass;
         }
@@ -55,11 +58,9 @@ public class VaultHacker {
     }
 
     private static class AscendingHacker extends HackerThread {
-
         public AscendingHacker(Vault vault) {
             super(vault);
         }
-
         @Override
         public void run() {
             for (int guess = 0; guess <= MAX_PASSWORD; guess++) {

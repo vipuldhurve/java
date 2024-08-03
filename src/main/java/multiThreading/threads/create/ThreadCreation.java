@@ -3,40 +3,54 @@ package multiThreading.threads.create;
 public class ThreadCreation {
 
     public static void main(String[] args) throws InterruptedException {
-//        Thread Creation 1 : by passing an object to Thread class that implements runnable interface
-        Thread thread1 = new Thread(new Runnable() {
-            @Override
-            public void run() {
-                System.out.println("Hello from " + Thread.currentThread().getName());
-                System.out.println("New Worker thread priority is " + Thread.currentThread().getPriority());
-            }
-        });
-        System.out.println("We are in thread: " + Thread.currentThread() + " before running thread1" );
 
-        thread1.setName("New Worker thread");
-        thread1.setPriority(Thread.MAX_PRIORITY);
+//        Method 1 : by extending Thread class
+        Thread thread1= new ExtendedThread();
         thread1.start();
 
-        thread1.setUncaughtExceptionHandler(new Thread.UncaughtExceptionHandler() {
+//        Method 2: Implementing the runnable interface and passing it  as argument to thread
+        Runnable runnableExample = new implementRunnableExample();
+        Thread thread2 = new Thread(runnableExample);
+        thread2.start();
+
+//        Method 3: Using an anonymous runnable implementation class
+        Thread thread3 = new Thread(new Runnable() {
             @Override
-            public void uncaughtException(Thread t, Throwable e) {
-                System.out.println("A critical error happened in thread " + t.getName()
-                        + " the error is: " + e.getMessage());
+            public void run() {
+                System.out.println("Running thread by anonymous runnable implementation class: " + Thread.currentThread().getName());
             }
         });
+        thread3.start();
 
-        System.out.println("We are in thread: " + Thread.currentThread() + " after running thread1" );
+//        Method 4: Using lambda expression (Java 8+)
+        Thread thread4 = new Thread( () ->
+                System.out.println( "Running thread using lambda expression: " + Thread.currentThread().getName() )
+        );
+        thread4.start();
 
-//        Thread Creation 2 : by extending Thread class
-        Thread thread2 = new NewThread();
-        thread2.start();
+//        Method 5: Using thread constructor with a subclass of runnable
+        Thread thread5 = new Thread(new RunnableSubclass());
+        thread5.start();
     }
 
-    private static class NewThread extends Thread{
+    private static class ExtendedThread extends Thread{
         @Override
         public void run(){
-            System.out.println("Hello from New Thread " + Thread.currentThread().getName());
-            System.out.println("New thread priority is " + Thread.currentThread().getPriority());
+            System.out.println("Running thread by extending thread class: " + Thread.currentThread().getName());
+        }
+    }
+
+    private static class implementRunnableExample implements Runnable{
+        @Override
+        public void run() {
+            System.out.println("Running thread by implementing runnable interface: "+ Thread.currentThread().getName());
+        }
+    }
+
+    private static class RunnableSubclass extends Thread{
+        @Override
+        public void run() {
+            System.out.println("Running thread using thread constructor with runnable sub class: "+ Thread.currentThread().getName());
         }
     }
 }

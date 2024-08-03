@@ -13,16 +13,14 @@ public class DaemonThreadExample1 {
                     try {
                         Thread.sleep(1000);
                     } catch (InterruptedException e) {
-                        System.out.println("Daemon interrupted");
                         e.printStackTrace();
                     }
                 }
             }
         });
 
-//        set the thread as daemon
+//        set the thread as daemon and start
         daemonThread.setDaemon(true);
-
         daemonThread.start();
 
 //        Main thread sleeps for 5 second then exists
