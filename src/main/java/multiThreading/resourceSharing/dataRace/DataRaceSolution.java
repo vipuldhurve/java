@@ -1,4 +1,5 @@
 package multiThreading.resourceSharing.dataRace;
+
 /*
 ---------------- Data race SOlution
 * 1. Synchronization of methods which modify shared resource
