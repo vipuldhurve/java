@@ -14,6 +14,7 @@ public class DeadLockProblem {
 
     private static class TrainA implements Runnable {
         private Intersection intersection;
+
         public TrainA(Intersection intersection) {
             this.intersection = intersection;
         }
@@ -33,6 +34,7 @@ public class DeadLockProblem {
 
     private static class TrainB implements Runnable {
         private Intersection intersection;
+
         public TrainB(Intersection intersection) {
             this.intersection = intersection;
         }

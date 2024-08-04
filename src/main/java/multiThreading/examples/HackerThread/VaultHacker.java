@@ -27,6 +27,7 @@ public class VaultHacker {
 
     private static class Vault {
         private int password;
+
         public Vault(int password) {
             this.password = password;
         }
@@ -61,6 +62,7 @@ public class VaultHacker {
         public AscendingHacker(Vault vault) {
             super(vault);
         }
+
         @Override
         public void run() {
             for (int guess = 0; guess <= MAX_PASSWORD; guess++) {

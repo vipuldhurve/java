@@ -1,37 +1,38 @@
 package multiThreading.threads.state;
+
 /**
  * The ThreadState class demonstrates the various states that a thread
  * can be in during its lifecycle in Java. It uses two threads, t1 and t2,
  * to illustrate the transition between states such as NEW, RUNNABLE, TIMED_WAITING,
  * and TERMINATED.
-
+ * <p>
  * At the beginning (0ms):
  * - t1 is in the NEW state.
-
+ * <p>
  * After t1.start() is called (approximately 0ms):
  * - t1 moves to the RUNNABLE state.
-
+ * <p>
  * After t2.start() is called inside the run() method of t1 (approximately 0ms):
  * - t2 is in the NEW state before start() is called.
  * - t2 moves to the RUNNABLE state after start() is called.
-
+ * <p>
  * After t1.sleep() and t2.sleep() is called for both threads in their run() methods (approximately 0ms) (order can be different)
  * - t1 is in TIMED_WAITING state
  * - t2 is in TIMED_WAITING state
-
+ * <p>
  * At approximately 100ms:
  * - t2 completes its first sleep of 100ms and exits the TIMED_WAITING state.
  * - t1 may still be in the TIMED_WAITING state due to its 200ms sleep.
-
+ * <p>
  * At approximately 200ms:
  * - t1 completes its 200ms sleep and exits the TIMED_WAITING state.
  * - If t1 immediately calls t2.join(), it enters the WAITING state until t2 completes.
  * - t2 might be in the RUNNABLE or TIMED_WAITING state depending on its execution progress.
-
+ * <p>
  * At approximately 300ms (after t2's second sleep ends):
  * - t2 completes its execution and moves to the TERMINATED state.
  * - t1, which was waiting for t2 to complete, now resumes execution and eventually moves to the TERMINATED state.
-
+ * <p>
  * The output of the program demonstrates these state transitions, highlighting the behavior of threads as they move through different states in their lifecycle.
  */
 
@@ -55,7 +56,7 @@ public class ThreadState {
         try {
             t1.join();
             System.out.println("The state of thread t1 when it has completed it's execution - " + t1.getState());
-        } catch (InterruptedException e){
+        } catch (InterruptedException e) {
             e.printStackTrace();
         }
 

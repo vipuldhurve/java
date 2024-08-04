@@ -1,10 +1,11 @@
 package multiThreading.resourceSharing.raceCondition;
+
 /*
-* Condition when multiple threads are accessing a shared resource
-* At least one thread is modifying the resource
-* The timing of the threads scheduling may cause incorrect results
-* The core of the problem is non-atomic operations performed on a shared resource
-* */
+ * Condition when multiple threads are accessing a shared resource
+ * At least one thread is modifying the resource
+ * The timing of the threads scheduling may cause incorrect results
+ * The core of the problem is non-atomic operations performed on a shared resource
+ * */
 public class RaceConditionExample {
     public static void main(String[] args) throws InterruptedException {
 //        Shared resource

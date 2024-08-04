@@ -34,7 +34,7 @@ public class ExplicitHandleInterruption {
             BigInteger result = BigInteger.ONE;
             for (BigInteger i = BigInteger.ZERO; i.compareTo(power) != 0; i.add(BigInteger.ONE)) {
 //                Explicitly handling interruption inside thread that takes longer time
-                if(Thread.currentThread().isInterrupted()){
+                if (Thread.currentThread().isInterrupted()) {
                     System.out.println("Prematurely interrupted computation...");
                     return BigInteger.ZERO;
                 }

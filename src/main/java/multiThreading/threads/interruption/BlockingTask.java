@@ -10,7 +10,7 @@ public class BlockingTask {
         blockingThread.interrupt();
     }
 
-    private static class BlockingThread extends Thread{
+    private static class BlockingThread extends Thread {
         @Override
         public void run() {
             try {

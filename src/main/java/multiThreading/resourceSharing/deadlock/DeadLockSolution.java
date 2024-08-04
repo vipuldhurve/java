@@ -1,4 +1,5 @@
 package multiThreading.resourceSharing.deadlock;
+
 /*
  * Acquire lock in same order to avoid deadlock
  * */
@@ -16,6 +17,7 @@ public class DeadLockSolution {
 
     private static class TrainA implements Runnable {
         private Intersection intersection;
+
         public TrainA(Intersection intersection) {
             this.intersection = intersection;
         }
@@ -35,6 +37,7 @@ public class DeadLockSolution {
 
     private static class TrainB implements Runnable {
         private Intersection intersection;
+
         public TrainB(Intersection intersection) {
             this.intersection = intersection;
         }

@@ -4,7 +4,7 @@ public class ThreadPriority {
     public static void main(String[] args) {
         Thread thread = new Thread(() -> {
             System.out.println("We are in thread: " + Thread.currentThread().getName());
-            System.out.println( Thread.currentThread().getName() + " priority is: " + Thread.currentThread().getPriority());
+            System.out.println(Thread.currentThread().getName() + " priority is: " + Thread.currentThread().getPriority());
         });
 
         thread.setName("New Worker Thread");

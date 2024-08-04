@@ -5,7 +5,7 @@ public class ThreadCreation {
     public static void main(String[] args) throws InterruptedException {
 
 //        Method 1 : by extending Thread class
-        Thread thread1= new ExtendedThread();
+        Thread thread1 = new ExtendedThread();
         thread1.start();
 
 //        Method 2: Implementing the runnable interface and passing it  as argument to thread
@@ -23,8 +23,8 @@ public class ThreadCreation {
         thread3.start();
 
 //        Method 4: Using lambda expression (Java 8+)
-        Thread thread4 = new Thread( () ->
-                System.out.println( "Running thread using lambda expression: " + Thread.currentThread().getName() )
+        Thread thread4 = new Thread(() ->
+                System.out.println("Running thread using lambda expression: " + Thread.currentThread().getName())
         );
         thread4.start();
 
@@ -33,24 +33,24 @@ public class ThreadCreation {
         thread5.start();
     }
 
-    private static class ExtendedThread extends Thread{
+    private static class ExtendedThread extends Thread {
         @Override
-        public void run(){
+        public void run() {
             System.out.println("Running thread by extending thread class: " + Thread.currentThread().getName());
         }
     }
 
-    private static class implementRunnableExample implements Runnable{
+    private static class implementRunnableExample implements Runnable {
         @Override
         public void run() {
-            System.out.println("Running thread by implementing runnable interface: "+ Thread.currentThread().getName());
+            System.out.println("Running thread by implementing runnable interface: " + Thread.currentThread().getName());
         }
     }
 
-    private static class RunnableSubclass extends Thread{
+    private static class RunnableSubclass extends Thread {
         @Override
         public void run() {
-            System.out.println("Running thread using thread constructor with runnable sub class: "+ Thread.currentThread().getName());
+            System.out.println("Running thread using thread constructor with runnable sub class: " + Thread.currentThread().getName());
         }
     }
 }
