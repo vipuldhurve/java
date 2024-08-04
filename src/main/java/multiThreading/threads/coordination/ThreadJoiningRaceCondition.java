@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class RaceCondition {
+public class ThreadJoiningRaceCondition {
     public static void main(String[] args) {
         List<Long> inputNumbers = Arrays.asList(100000000L, 4L, 35435L, 2324L, 4656L, 23L, 5556L);
         List<FactorialThread> threads = new ArrayList<>();

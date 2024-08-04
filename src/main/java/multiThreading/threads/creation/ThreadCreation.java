@@ -1,4 +1,4 @@
-package multiThreading.threads.create;
+package multiThreading.threads.creation;
 
 public class ThreadCreation {
 
