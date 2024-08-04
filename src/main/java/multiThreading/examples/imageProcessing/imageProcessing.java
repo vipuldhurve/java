@@ -9,7 +9,7 @@ import java.util.List;
 
 public class imageProcessing {
     public static final String SOURCE_FILE = "src/main/java/multiThreading/examples/imageProcessing/many-flowers.jpg";
-    public static final String DESTINATION_FILE = "src/main/java/multiThreading/examples/imageProcessing/out/many-flowers.jpg";
+    public static final String DESTINATION_FILE = "src/main/java/multiThreading/examples/imageProcessing/processedImage/many-flowers.jpg";
 
     public static void main(String[] args) throws IOException {
         BufferedImage originalImage = ImageIO.read(new File(SOURCE_FILE));

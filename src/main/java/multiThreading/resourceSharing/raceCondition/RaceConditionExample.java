@@ -1,11 +1,15 @@
 package multiThreading.resourceSharing.raceCondition;
-
+/*
+* Condition when multiple threads are accessing a shared resource
+* At least one thread is modifying the resource
+* The timing of the threads scheduling may cause incorrect results
+* The core of the problem is non-atomic operations performed on a shared resource
+* */
 public class RaceConditionExample {
-
     public static void main(String[] args) throws InterruptedException {
 //        Shared resource
         InventoryCounter inventoryCounter = new InventoryCounter();
-
+//        2 threads trying to modify shared resource by non-atomic operations
         IncrementingThread incrementingThread = new IncrementingThread(inventoryCounter);
         DecrementingThread decrementingThread = new DecrementingThread(inventoryCounter);
 
@@ -14,7 +18,7 @@ public class RaceConditionExample {
 
         incrementingThread.join();
         decrementingThread.join();
-
+//       Can produce unexpected results
         System.out.println("We currently have " + inventoryCounter.getItems() + " items");
     }
 
