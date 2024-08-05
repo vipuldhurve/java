@@ -1,5 +1,5 @@
 ## Singleton
-- A highLevelDesign pattern that restricts the instantiation of a class to <b>one single object</b>.
+- A design pattern that restricts the instantiation of a class to <b>one single object</b>.
 - Throughout the lifetime of the application the instance will remain same.
 - Class should be sealed and its constructor should be private.
 - Instance should be requested instead of created.
