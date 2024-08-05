@@ -1,7 +1,7 @@
 ## Monolithic Architecture
 - Monolithic architecture is a application development technique where everything is constructed in a single unit or block called monolith.
 - All components are tightly coupled into a single cohesive unit.
-- A monolithic application will use one codebaseand one runtime environment to create an application.
+- A monolithic application will use one codebase and one runtime environment to create an application.
 - This means that multiple services like database, api's etc will function as one large application organized. However, all the components as well as any associated components needs to be present for the software to successfully run.
 
 ### Advantages of Monolithic Architecture
