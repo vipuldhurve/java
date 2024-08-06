@@ -11,13 +11,14 @@ public class Streams {
 //        ******** Notes ********
 //        Without terminal operation streams does not get executed
 
-//        Collections to stream
+//        Collections to stream .stream()
         ArrayList<String> strList = new ArrayList<>(Arrays.asList("1a", "2b", "3c"));
         System.out.println("-------- Collections Stream");
         strList.stream().forEach(System.out::println);
         System.out.println();
 
 //        Map To Stream    -> Map does not have a dedicated stream method
+//        .entrySet().stream()
         Map<Character, int[]> bingoMap = new LinkedHashMap();
         int bingoIndex = 1;
         for (char c : "BINGO".toCharArray()) {
@@ -39,10 +40,12 @@ public class Streams {
         String[] strArr = {"one", "two", "three"};
         System.out.print("-------- Arrays Stream & Stream.of(...values) : ");
         var stream1 = Arrays.stream(strArr).sorted(Comparator.reverseOrder());
+
 //        Stream.of(...values)
         var stream2 = Stream.of("Six", "Five", "Four")
                 .map(s -> s.toUpperCase());
-//        Concat streamApi.Streams
+
+//        Concat Stream.concat()
         System.out.println("Concat streamApi.Streams");
         Stream.concat(stream2, stream1).forEach(System.out::println);
         System.out.println();
@@ -85,13 +88,13 @@ public class Streams {
         System.out.println();
         System.out.println();
 
-//        doWhile & takeWhile and skip
+//        doWhile, dropWhile & takeWhile, skip and distinct
         System.out.println("-------- doWhile & takeWhile and skip");
         IntStream.iterate((int) 'A', i -> i <= (int) 'z', i -> i + 1)
                 .filter(Character::isAlphabetic)
-                .dropWhile(i -> Character.toUpperCase(i) <= 'C')
+                .dropWhile(i -> Character.toUpperCase(i) <= 'C') //drops ABC
                 .takeWhile(i -> i <= 'e')
-                .skip(3)
+                .skip(3) // skips DEF
                 .forEach(e -> System.out.printf("%c ", e));
         System.out.println();
         System.out.println();
