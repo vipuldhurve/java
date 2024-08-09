@@ -42,6 +42,10 @@ public class SearchInRotatedSortedArray {
         target = 3;
         solve(nums, target);
 
+        nums = new int[]{1, 2, 3};
+        target = 1;
+        solve(nums, target);
+
         nums = new int[]{1};
         target = 0;
         solve(nums, target);

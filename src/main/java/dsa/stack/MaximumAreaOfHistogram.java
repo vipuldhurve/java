@@ -27,64 +27,64 @@ public class MaximumAreaOfHistogram {
         }
     }
 
-    public static int[] nearestSmallerToLeft(int[] arr) {
-        int[] result = new int[arr.length];
+    public static int[] nearestSmallerToLeft(int[] heights) {
+        int[] result = new int[heights.length];
 
-        //Stack will store the val and index of nearest_greater_to_left - A Node object
+//        Stack will store the val and index of nearest_greater_to_left - A Node object
         Stack<Node> s = new Stack<>();
 
-        for (int i = 0; i < arr.length; i++) {
+        for (int i = 0; i < heights.length; i++) {
             if (s.isEmpty()) {
                 result[i] = -1;
-            } else if (!s.isEmpty() && s.peek().val < arr[i]) {
+            } else if (!s.isEmpty() && s.peek().val < heights[i]) {
                 result[i] = s.peek().index;
-            } else if (!s.isEmpty() && s.peek().val >= arr[i]) {
-                while (!s.isEmpty() && s.peek().val >= arr[i]) {
+            } else if (!s.isEmpty() && s.peek().val >= heights[i]) {
+                while (!s.isEmpty() && s.peek().val >= heights[i]) {
                     s.pop();
                 }
                 if (s.isEmpty()) result[i] = -1;
                 else result[i] = s.peek().index;
             }
-            s.push(new Node(arr[i], i));
+            s.push(new Node(heights[i], i));
         }
         return result;
     }
 
-    public static int[] nearestSmallerToRight(int[] arr) {
-        int n = arr.length;
+    public static int[] nearestSmallerToRight(int[] heights) {
+        int n = heights.length;
         int[] result = new int[n];
 
-        //Stack will store the val and index of nearest_greater_to_right - A Node object
+//        Stack will store the val and index of nearest_greater_to_right - A Node object
         Stack<Node> s = new Stack<>();
 
         for (int i = n - 1; i >= 0; i--) {
             if (s.isEmpty()) {
                 result[i] = n;
-            } else if (!s.isEmpty() && s.peek().val < arr[i]) {
+            } else if (!s.isEmpty() && s.peek().val < heights[i]) {
                 result[i] = s.peek().index;
-            } else if (!s.isEmpty() && s.peek().val >= arr[i]) {
-                while (!s.isEmpty() && s.peek().val >= arr[i]) {
+            } else if (!s.isEmpty() && s.peek().val >= heights[i]) {
+                while (!s.isEmpty() && s.peek().val >= heights[i]) {
                     s.pop();
                 }
                 if (s.isEmpty()) result[i] = n;
                 else result[i] = s.peek().index;
             }
-            s.push(new Node(arr[i], i));
+            s.push(new Node(heights[i], i));
         }
         return result;
     }
 
-    public static int maximumAreaOfHistogram(int[] arr) {
-        //Calculate index of nearest smaller to left
-        int[] nsl = nearestSmallerToLeft(arr);
-        //Calculate index of nearest smaller to right
-        int[] nsr = nearestSmallerToRight(arr);
+    public static int maximumAreaOfHistogram(int[] heights) {
+//        Calculate index of nearest smaller to left
+        int[] nsl = nearestSmallerToLeft(heights);
+//        Calculate index of nearest smaller to right
+        int[] nsr = nearestSmallerToRight(heights);
 
         int mah = Integer.MIN_VALUE;
-        //Max width up to which a bar can be extended
-        //width[i] = nsr[i]-nsl[i]-1
-        for (int i = 0; i < arr.length; i++) {
-            mah = Math.max(mah, (nsr[i] - nsl[i] - 1) * arr[i]);
+//        Max width up to which a bar can be extended
+//        width[i] = nsr[i]-nsl[i]-1
+        for (int i = 0; i < heights.length; i++) {
+            mah = Math.max(mah, (nsr[i] - nsl[i] - 1) * heights[i]);
         }
 
         if (mah == Integer.MIN_VALUE) return 0;

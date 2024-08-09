@@ -9,7 +9,7 @@ public class MinStackExtraSpace {
     // top,
     // and retrieving the minimum element in constant time.
 
-    class MinStack {
+    private static class MinStack {
 
         Stack<Integer> s;
         Stack<Integer> minStack;
@@ -21,12 +21,13 @@ public class MinStackExtraSpace {
 
         public void push(int val) {
             s.push(val);
-            if (s.isEmpty() || val <= minStack.peek()) minStack.push(val);
+            if (minStack.isEmpty() || val <= minStack.peek()) minStack.push(val);
         }
 
         public void pop() {
+            if (s.isEmpty()) return;
             int popped = s.pop();
-            if(!s.isEmpty() && popped == minStack.peek()) minStack.pop();
+            if (!minStack.isEmpty() && popped == minStack.peek()) minStack.pop();
         }
 
         public int top() {
@@ -39,7 +40,12 @@ public class MinStackExtraSpace {
     }
 
     public static void main(String[] args) {
-        System.out.println("Hello :)");
+        MinStack minStack = new MinStack();
+        minStack.pop();
+        minStack.push(1);
+        minStack.pop();
+        minStack.push(4);
+        System.out.println(minStack.getMin());
     }
 
 }
