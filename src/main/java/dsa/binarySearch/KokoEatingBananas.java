@@ -51,11 +51,9 @@ public class KokoEatingBananas {
 //        if we have hours equal no. of piles
 //        we can get min eating speed of max-pile value
         if (hours == n) return high;
-        System.out.println(high);
         while (low <= high) {
 //            Calculate mid-speed and optimize to find min
             int mid = low + (high - low) / 2;
-            System.out.println("low: " + low + "  high: " + high + "  mid: " + mid);
 //            Calculate totalHours taken with speed = mid
             int totalHours = calculateTotalHours(piles, mid);
 //            Find minimum speed if a valid speed found
@@ -79,20 +77,20 @@ public class KokoEatingBananas {
         int hours = 9;
         solve(piles, hours);
 
-//        piles = new int[]{25, 10, 23, 4};
-//        hours = 25;
-//        solve(piles, hours);
-//
-//        piles = new int[]{3, 6, 7, 11};
-//        hours = 8;
-//        solve(piles, hours);
-//
-//        piles = new int[]{30, 11, 23, 4, 20};
-//        hours = 5;
-//        solve(piles, hours);
-//
-////        piles = {30,11,23,4,20};
-//        hours = 6;
-//        solve(piles, hours);
+        piles = new int[]{25, 10, 23, 4};
+        hours = 4;
+        solve(piles, hours);
+
+        piles = new int[]{3, 6, 7, 11};
+        hours = 8;
+        solve(piles, hours);
+
+        piles = new int[]{30, 11, 23, 4, 20};
+        hours = 5;
+        solve(piles, hours);
+
+//        piles = {30,11,23,4,20};
+        hours = 6;
+        solve(piles, hours);
     }
 }
