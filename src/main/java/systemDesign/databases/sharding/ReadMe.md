@@ -16,11 +16,10 @@ Consider a very large database whose sharding has not been done. For example, le
 - <b><i>Improve Response Time:</i></b> Data retrieval takes longer on a single large database. The database management system needs to search through many rows to retrieve the correct data. By contrast, data shards have fewer rows than the entire database, reducing retrieval time.
 - <b><i>Avoid Total Service Outage:</i></b> If the computer hosting the database fails, the application depending on it fails too. Sharding distributes parts of the database into different computers, preventing total service outages. If one shard becomes unavailable, data can be accessed and restored from an alternate shard.
 - <b><i>Scale Efficiently:</i></b> A growing database consumes more computing resources and eventually reaches storage capacity. Sharding allows adding more computing resources to support scaling without shutting down the application for maintenance.
-
+<br><br>
 ## How Does Database Sharding Work?
 A database stores information in multiple datasets consisting of columns and rows. Sharding splits a single dataset into partitions or shards, each containing unique rows of information stored separately across multiple computers (nodes). All shards run on separate nodes but share the original database’s schema or design.
 
-## Example of Unsharded and Sharded Database
 ### Unsharded
 | Customer ID | Name  | State      |
 |-------------|-------|------------|
@@ -49,7 +48,7 @@ A database stores information in multiple datasets consisting of columns and row
 - **Shard Key:** A column used to determine how to partition the dataset.
 - **Shared-nothing Architecture:** Each physical shard operates independently and processes data in parallel.
 
-
+<br><br>
 ## Methods of Database Sharding
 ### 1. Range-based Sharding
 Splits database rows based on a range of values and assigns a shard key accordingly.
@@ -101,12 +100,14 @@ Example: a dating service website uses a database to store customer information 
 #### Pros and Cons
 - Pros: Faster information retrieval based on geographical proximity.
 - Cons: Can result in uneven data distribution.
-
+  
+<br><br>
 ## Hotspots and its consequences
 When a data overload occurs on specific physical shards although others remain underloaded, it results in database hotspots.
 
 Hotspots **slow down the retrieval process** on the database, defeating the purpose of data sharding.
 
+<br><br>
 ## How to Optimize Database Sharding for Even Data Distribution?
 ### Good Shard-key Selection
 Choosing an optimal shard key is crucial for balanced data distribution. Here are the factors to consider:
@@ -126,6 +127,7 @@ Choosing an optimal shard key is crucial for balanced data distribution. Here ar
 - **Importance:** Monotonically increasing or decreasing shard keys can cause unbalanced shards.
 - **Example:** In a feedback database split into shards based on the number of purchases (0-10, 11-20, 21+), as the business grows, most data will accumulate in the 21+ shard, leading to imbalance.
 
+<br><br>
 ## Alternatives to Database Sharding
 ### Vertical Scaling
 Increases the computing power of a single machine by adding resources like CPU, RAM, and storage.
@@ -152,7 +154,7 @@ Partitioning is classified into two types:
 - **Similarity:** Database sharding is like horizontal partitioning. Both processes split the database into multiple groups of unique rows.
 - **Difference:** Partitioning stores all data groups in the same computer, but database sharding spreads them across different computers.
 
-
+<br><br>
 ## Challenges of Database Sharding
 ### 1. Data Hotspots
 Uneven data distribution causing some shards to become overloaded.
