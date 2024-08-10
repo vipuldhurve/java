@@ -1,15 +1,23 @@
-## Load Balancer
+# Load Balancer
 A load balancer is a device or an application that distributes the network traffic across multiple servers or instances to ensure no single server becomes overwhelmed.This helps in improving the performance, responsiveness, availability, reliability of application.
  
 ### Key Functions:
 - <b>Traffic Distribution:</b> Distributes incoming requests to multiple backend servers based on various algorithms like round-robin, least connections, IP hash, etc.
 - <b>Health Checks:</b> Regularly checks the health of backend servers and ensures traffic is only directed to healthy instances.
-- <b>Sticky Sessions:</b> Ensures requests from the same client are directed to the same server for session consistency.
+- <b>Sticky Sessions:</b> Ensures requests from the same client are directed to the same server for session consistency. 
 - <b>SSL Termination:</b> Offloads the SSL/TLS encryption and decryption from backend servers, improving their performance.
 
 ### Types:
 - <b>Hardware Load Balancers:</b> Physical devices designed for high performance and reliability.
 - <b>Software Load Balancers:</b> Applications that run on general-purpose hardware, offering more flexibility and easier integration with cloud environments.
+
+### Traffic Routing
+Load balancers can route traffic based on various metrics, including:
+- Random
+- Least connections/loaded
+- Session/cookies
+- Round-robin or weighted round-robin
+- IP Hash(Layer 4 or Layer 7)
 
 #### Examples
 - NGINX
@@ -18,7 +26,7 @@ A load balancer is a device or an application that distributes the network traff
 - Google Cloud Load Balancing
 <br><br>
 
-## Service Descovery
+# Service Descovery
 Service discovery is a mechanism that enables services to find and communicate with each other within a distributed system. It automates the process of detecting and tracking service instances, making it easier to manage the dynamic and scalable environments.
 
 ### Key Functions:
