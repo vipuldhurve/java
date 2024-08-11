@@ -40,12 +40,12 @@ Service discovery is a mechanism that enables services to find and communicate w
 ### Types:
 - <b>Client-Side Discovery:</b> The client requires the service registry to find the addresses of available service instances.
 <div align="center">
-  <img src="https://github.com/vipuldhurve/Code/blob/main/assets/client-side-service-registry.png" alt="Image" style="display:block; width:60%; height:auto; margin:auto;">
+  <img src="https://github.com/vipuldhurve/Code/blob/main/assets/client-side-service-registry.png" alt="Image" style="display:block; width:50%; height:auto; margin:auto;">
 </div> 
 
 - <b>Service-Side Discovery:</b> A load balancer queries the service registry and directs the client requests to the appropriate service instances.
 <div align="center">
-  <img src="https://github.com/vipuldhurve/Code/blob/main/assets/server-side-service-registry.png" alt="Image" style="display:block; width:70%; height:auto; margin:auto;">
+  <img src="https://github.com/vipuldhurve/Code/blob/main/assets/server-side-service-registry.png" alt="Image" style="display:block; width:60%; height:auto; margin:auto;">
 </div> 
 
 #### Examples
