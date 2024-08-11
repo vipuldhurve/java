@@ -32,7 +32,7 @@ In the case of auto-scaling resources on a pay-per-use model, rate limiting puts
 ### 1. Leaky Bucket
 Leaky bucket is a simple, intuitive algorithm. It creates a queue with a finite capacity. All requests in a given time frame beyond the capacity of the queue are spilled off.
 <div align="center">
-  <img src="https://github.com/vipuldhurve/Code/blob/main/assets/leaky-bucket-rate-limiter.jpg" alt="Image" style="display:block; margin:auto;">
+  <img src="https://github.com/vipuldhurve/Code/blob/main/assets/leaky-bucket-rate-limiter.jpg" alt="Image" style="display:block; width:70%; height:auto; margin:auto;">
 </div>
 
 #### Pros:
