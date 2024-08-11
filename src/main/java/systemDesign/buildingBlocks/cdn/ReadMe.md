@@ -5,7 +5,7 @@
 
 You could think of a CDN like an ATM. If your money were only available from one bank in town, you’d have to make a time-consuming trip and stand in a long line every time you wanted to withdraw cash. However, with a cash machine on practically every corner, you have fast and easy access to your money any time you need it.
 <div align="center">
-  <img src="https://github.com/vipuldhurve/Code/blob/main/assets/cdn.png" alt="Image" style="display:block; width:70%; height:auto; margin:auto;">
+  <img src="https://github.com/vipuldhurve/Code/blob/main/assets/cdn.png" alt="Image" style="display:block; width:60%; height:auto; margin:auto;">
 </div>
 
 <br><br>
