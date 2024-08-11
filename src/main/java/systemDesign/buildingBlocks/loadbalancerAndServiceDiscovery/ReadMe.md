@@ -1,7 +1,7 @@
 # Load Balancer
 A load balancer is a device or an application that distributes the network traffic across multiple servers or instances to ensure no single server becomes overwhelmed.This helps in improving the performance, responsiveness, availability, reliability of application.
 <div align="center">
-  <img src="https://github.com/vipuldhurve/Code/blob/main/assets/load-balancer.png" alt="Image" style="display:block; width:75%; height:auto; margin:auto;">
+  <img src="https://github.com/vipuldhurve/Code/blob/main/assets/load-balancer.png" alt="Image" style="display:block; width:80%; height:auto; margin:auto;">
 </div> 
 
 ### Key Functions:
