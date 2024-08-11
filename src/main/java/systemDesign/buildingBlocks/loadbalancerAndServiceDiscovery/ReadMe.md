@@ -1,6 +1,9 @@
 # Load Balancer
 A load balancer is a device or an application that distributes the network traffic across multiple servers or instances to ensure no single server becomes overwhelmed.This helps in improving the performance, responsiveness, availability, reliability of application.
- 
+<div align="center">
+  <img src="https://github.com/vipuldhurve/Code/blob/main/assets/load-balancer.jpg" alt="Image" style="display:block; width:80%; height:auto; margin:auto;">
+</div> 
+
 ### Key Functions:
 - <b>Traffic Distribution:</b> Distributes incoming requests to multiple backend servers based on various algorithms like round-robin, least connections, IP hash, etc.
 - <b>Health Checks:</b> Regularly checks the health of backend servers and ensures traffic is only directed to healthy instances.
@@ -24,8 +27,8 @@ Load balancers can route traffic based on various metrics, including:
 - HAProxy
 - AWS Elastic Load Balancer (ELB)
 - Google Cloud Load Balancing
-<br><br>
 
+<br><br>
 # Service Descovery
 Service discovery is a mechanism that enables services to find and communicate with each other within a distributed system. It automates the process of detecting and tracking service instances, making it easier to manage the dynamic and scalable environments.
 
@@ -36,7 +39,14 @@ Service discovery is a mechanism that enables services to find and communicate w
 
 ### Types:
 - <b>Client-Side Discovery:</b> The client requires the service registry to find the addresses of available service instances.
+<div align="center">
+  <img src="https://github.com/vipuldhurve/Code/blob/main/assets/client-side-service-registry.png" alt="Image" style="display:block; width:60%; height:auto; margin:auto;">
+</div> 
+
 - <b>Service-Side Discovery:</b> A load balancer queries the service registry and directs the client requests to the appropriate service instances.
+<div align="center">
+  <img src="https://github.com/vipuldhurve/Code/blob/main/assets/server-side-service-registry.png" alt="Image" style="display:block; width:60%; height:auto; margin:auto;">
+</div> 
 
 #### Examples
 - Consul
