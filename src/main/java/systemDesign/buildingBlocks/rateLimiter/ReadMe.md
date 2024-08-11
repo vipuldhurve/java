@@ -4,7 +4,7 @@ A rate limiter is a defensive mechanism used in a distributed system to prevent 
 #### What Is Rate Limiting?
 - Rate limiting protects your APIs from unintended or malicious overuse by limiting the number of requests that can reach your API in a given period of time. 
 - Without rate limiting, any user can bombard your server with requests leading to spikes that starve other users i.e. risking resource starvation from load-based denial of service attacks, security failures and increased operational costs.
-<div align="center">
+<div>
   <img src="https://github.com/vipuldhurve/Code/blob/main/assets/rate-limiter.jpg" alt="Image" style="display:block; margin:auto;">
 </div>
 
@@ -31,7 +31,7 @@ In the case of auto-scaling resources on a pay-per-use model, rate limiting puts
 ## Common Rate Limiting Algorithms
 ### 1. Leaky Bucket
 Leaky bucket is a simple, intuitive algorithm. It creates a queue with a finite capacity. All requests in a given time frame beyond the capacity of the queue are spilled off.
-<div align="center">
+<div>
   <img src="https://github.com/vipuldhurve/Code/blob/main/assets/leaky-bucket-rate-limiter.jpg" alt="Image" style="display:block; margin:auto;">
 </div>
 
@@ -47,7 +47,7 @@ Leaky bucket is a simple, intuitive algorithm. It creates a queue with a finite 
 The token bucket algorithm is similar to leaky bucket, but instead, we assign tokens on a user level. For a given time duration d, the number of request r packets that a user can receive is defined. Every time a new request arrives at a server, there are two operations that happen:
 - <b><i>Fetch token:</i></b> The current number of tokens for that user is fetched. If it is greater than the limit defined, then the request is dropped.
 - <b><i>Update token:</i></b> If the fetched token is less than the limit for the time duration d, then the request is accepted and the token is appended.
-<div align="center">
+<div>
   <img src="https://github.com/vipuldhurve/Code/blob/main/assets/token-bucket-rate-limiter.jpg" alt="Image" style="display:block; margin:auto;">
 </div>
 
@@ -58,7 +58,7 @@ The token bucket algorithm is similar to leaky bucket, but instead, we assign to
 
 ### 3. Fixed Window Counter
 Fixed window is one of the most basic rate limiting mechanisms. We keep a counter for a given duration of time and continue incrementing it for every request we get. Once the limit is reached, we drop all further requests until the time duration is reset.
-<div align="center">
+<div>
   <img src="https://github.com/vipuldhurve/Code/blob/main/assets/fixed-window-rate-limiter.jpg" alt="Image" style="display:block; margin:auto;">
 </div>
 
