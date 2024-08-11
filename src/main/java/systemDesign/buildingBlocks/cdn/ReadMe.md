@@ -5,7 +5,7 @@
 
 You could think of a CDN like an ATM. If your money were only available from one bank in town, you’d have to make a time-consuming trip and stand in a long line every time you wanted to withdraw cash. However, with a cash machine on practically every corner, you have fast and easy access to your money any time you need it.
 <div align="center">
-  <img src="https://github.com/vipuldhurve/Code/blob/main/assets/cdn.png" alt="Image" style="display:block; width:80%; height:auto; margin:auto;">
+  <img src="https://github.com/vipuldhurve/Code/blob/main/assets/cdn.png" alt="Image" style="display:block; width:70%; height:auto; margin:auto;">
 </div>
 
 <br><br>
@@ -28,7 +28,7 @@ A content delivery network relies on three types of servers:
 - Performance is the difference between a click giving you immediate access to new content and a click followed by a seven-second wait while a page loads or a video buffers. That wait time is called **“buffering”** and is symbolized by a familiar swirling circle icon on the screen. 
 - To ensure high performance and minimize buffering, CDNs deliver content that’s been pre-saved on nearby servers on the CDN’s network rather than sending requests to origin servers which may be halfway around the world.
 <div align="center">
-  <img src="https://github.com/vipuldhurve/Code/blob/main/assets/cdn-traffic-load.jpg" alt="Image" style="display:block; width:70%; height:auto; margin:auto;">
+  <img src="https://github.com/vipuldhurve/Code/blob/main/assets/cdn-traffic-load.jpg" alt="Image" style="display:block; width:80%; height:auto; margin:auto;">
 </div>
 
 ### 2. Ensure availability
