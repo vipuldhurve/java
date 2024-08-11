@@ -15,7 +15,7 @@ A content delivery network relies on three types of servers:
 - <b><i>Edge servers:</i></b> Edge servers are located in multiple geographical locations around the world, also called <b><i>“points of presence” (PoPs)</i></b>. The edge servers within these PoPs cache content that is copied from origin servers, and they are responsible for delivering that content to nearby users. When a user requests access to content on an origin server, they are redirected to a cached copy of the content on an edge server that’s geographically close to them. When cached content is out of date, the edge server requests updated content from the origin server. CDN edge servers are owned or managed by the CDN hosting provider.
 - <b><i>DNS servers:</i></b> Domain Name System (DNS) servers keep track of and supply IP addresses for origin and edge servers. When a client sends a request to an origin server, DNS servers respond with the name of a paired edge server from which the content can be served faster.
 <div align="center">
-  <img src="https://github.com/vipuldhurve/Code/blob/main/assets/how-cdn-work.png" alt="Image" style="display:block; width:80%; height:auto; margin:auto;">
+  <img src="https://github.com/vipuldhurve/Code/blob/main/assets/how-cdn-work.png" alt="Image" style="display:block; width:60%; height:auto; margin:auto;">
 </div>
 
 #### To deliver the optimal viewing experience, CDNs perform two essential functions:
