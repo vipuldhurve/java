@@ -31,20 +31,20 @@ A content delivery network relies on three types of servers:
   <img src="https://github.com/vipuldhurve/Code/blob/main/assets/cdn-traffic-load.jpg" alt="Image" style="display:block; width:80%; height:auto; margin:auto;">
 </div>
 
-### 2. Ensure availability
+### 2. Offload traffic
+- With the explosive growth of online streaming and other rich media services, and higher user expectations about web performance across multiple device types, many of today’s network service providers are finding their content distribution networks to be highly stressed.
+- By responding to a request for web content with a cached version from servers closer to the end user, a CDN can offload traffic from content servers and improve the web experience
+
+### 3. Ensure availability
 - Availability means that content remains accessible to end users even during periods of excessive user traffic when many people are accessing content at the same time or if there are server outages in some parts of the internet. 
 - Advanced CDNs, with their highly distributed architecture and massive platform of servers, can absorb 100+ Tbps of traffic and make it possible for content providers to stay available to even larger user bases.
 
-### 3. Enhance Security
+### 4. Enhance Security
 - CDNs can also improve website security with increased protection against malicious actors and threats like distributed denial-of-service (DDoS) attacks.
 - Today’s most advanced content delivery networks provide unique cloud-based security solutions and DDoS protection.
 
-### 4. Improve customer experiences
+### 5. Improve customer experiences
 - Content, application, and website owners — including ecommerce sites, media properties, and cloud computing companies — use CDNs to improve customer experiences, lower abandonment rates, increase ad impressions, improve conversion rates, and strengthen customer loyalty.
-
-### 5. Offload traffic
-- With the explosive growth of online streaming and other rich media services, and higher user expectations about web performance across multiple device types, many of today’s network service providers are finding their content distribution networks to be highly stressed. 
-- By responding to a request for web content with a cached version from servers closer to the end user, a CDN can offload traffic from content servers and improve the web experience
 
 ### 6. Reduce bandwidth costs
 - By delivering content from servers closer to users, CDNs reduce bandwidth consumption and the associated costs.
