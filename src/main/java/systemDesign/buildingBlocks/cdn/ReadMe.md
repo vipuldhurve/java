@@ -14,13 +14,37 @@ A content delivery network relies on three types of servers:
 - <b><i>Origin servers:</i></b> Origin servers contain the original versions of content and they function as the source of truth. Whenever content needs to be updated, changes are made on the origin server. An origin server may be owned and managed by a content provider or it may be hosted on the infrastructure of a third-party cloud provider like Amazon’s AWS S3 or Google Cloud Storage.
 - <b><i>Edge servers:</i></b> Edge servers are located in multiple geographical locations around the world, also called <b><i>“points of presence” (PoPs)</i></b>. The edge servers within these PoPs cache content that is copied from origin servers, and they are responsible for delivering that content to nearby users. When a user requests access to content on an origin server, they are redirected to a cached copy of the content on an edge server that’s geographically close to them. When cached content is out of date, the edge server requests updated content from the origin server. CDN edge servers are owned or managed by the CDN hosting provider.
 - <b><i>DNS servers:</i></b> Domain Name System (DNS) servers keep track of and supply IP addresses for origin and edge servers. When a client sends a request to an origin server, DNS servers respond with the name of a paired edge server from which the content can be served faster.
-<div align="center">
-  <img src="https://github.com/vipuldhurve/Code/blob/main/assets/how-cdn-work.png" alt="Image" style="display:block; width:70%; height:auto; margin:auto;">
-</div>
 
 #### To deliver the optimal viewing experience, CDNs perform two essential functions:
 - <b><i>1. Reduce Latency:</i></b> Some content delivery networks alleviate latency by reducing the physical distance that the content needs to travel to reach you. Therefore, larger and more widely distributed CDNs are able to deliver website content more quickly and reliably by putting the content as close to the end user as possible.
 - <b><i>2. Balance loads:</i></b> A CDN balances overall traffic to give everyone accessing internet content the best web experience possible. Think about it like routing traffic in the real world. There may be one route that’s usually the fastest from point A to point B if no other cars take it — but if it starts getting congested, it’s better for everyone if the traffic gets spread out over a few different routes. That may mean that you get sent on a roadway that’s a few minutes longer (or milliseconds, when scaled to internet speeds), but you don’t get stuck in the traffic jam that’s forming on the shortest route. Load balancing enables content providers to handle increases in demand and large traffic spikes while still providing high-quality user experiences and avoiding downtime.
+<div align="center">
+  <img src="https://github.com/vipuldhurve/Code/blob/main/assets/how-cdn-work.png" alt="Image" style="display:block; width:70%; height:auto; margin:auto;">
+</div>
+
+<br><br>
+## Types of CDNs
+### 1. Push CDNs
+Push CDNs receive new content whenever changes occur on your server. You are responsible for uploading content directly to the CDN and updating URLs to point to the CDN.
+
+#### Push CDNs are ideal for:
+- Sites with a small amount of traffic.
+- Sites with content that doesn't change frequently.
+
+#### Advantages of Push CDNs
+- Content is uploaded only when it is new or changed, minimizing traffic
+- Maximizes storage by keeping content until it expires or is updated.
+
+### 2. Pull Cdns
+Pull CDNs retrieve new content from your server when the first user requests it. The content remains on your server, and URLs are rewritten to point to the CDN. The initial request may be slower until the content is cached on the CDN.
+
+#### Pull CDNs are suitable for:
+- Sites with heavy traffic.
+- Scenarios where only recently-requested content remains cached on the CDN.
+
+#### Advantages of Pull CDNs
+- Minimizes storage space on the CDN.
+- Distributes traffic evenly across servers.
 
 <br><br>
 ## Benefits of a CDN
