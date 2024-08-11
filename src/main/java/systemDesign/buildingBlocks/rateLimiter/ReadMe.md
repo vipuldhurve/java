@@ -112,4 +112,4 @@ Race conditions happen in a get-then-set approach with high concurrency. Each re
 - <b><i>Hard throttling:</b></i> The number of API requests cannot exceed the throttle limit.
 - <b><i>Soft throttling:</b></i> In this type, we can set the API request limit to exceed a certain percentage. For example, if we have a rate limit of 100 messages a minute and a 10 percent exceed limit, our rate limiter will allow up to 110 messages per minute.
 - <b><i>Elastic or dynamic throttling:</b></i> Under elastic throttling, the number of requests can go beyond the threshold if the system has some resources available. For example, if a user is allowed only 100 messages a minute, we can let the user send more than 100 messages a minute when there are free resources available in the system.
-### Resource: [rate-limiter by builtin.com](https://builtin.com/software-engineering-perspectives/rate-limiter)
+#### #Resource: [rate-limiter by builtin.com](https://builtin.com/software-engineering-perspectives/rate-limiter)

@@ -79,4 +79,4 @@ Pull CDNs retrieve new content from your server when the first user requests it.
 - Intelligence from CDNs also enables services such as real user monitoring, media analytics that measure end-user engagement with web content, and cloud security intelligence to keep track of online threats.
 
 <br><br>
-#### Resource: [www.akamai.com/glossary/what-is-a-cdn](https://www.akamai.com/glossary/what-is-a-cdn)
+#### #Resource: [www.akamai.com/glossary/what-is-a-cdn](https://www.akamai.com/glossary/what-is-a-cdn)

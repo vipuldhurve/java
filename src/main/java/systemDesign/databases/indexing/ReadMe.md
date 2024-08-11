@@ -180,5 +180,5 @@ We use the B+ Tree data structure for multilevel indexing. The leaf nodes of the
 - Since CPU speed and secondary memory speed have a large difference, the CPU uses this main memory index table to bridge the gap of speeds.
 - Indexing helps in better CPU utilization and better performance.
 
-#### #Reference: <a href="https://www.scaler.com/topics/dbms/indexing-in-dbms/" target="_blank">Indexing in DBMS by SCALER</a>
+#### #Reference: [www.scaler.com/topics/dbms/indexing-in-dbms](https://www.scaler.com/topics/dbms/indexing-in-dbms)
 
