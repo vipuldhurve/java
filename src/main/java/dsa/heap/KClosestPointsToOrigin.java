@@ -41,7 +41,7 @@ public class KClosestPointsToOrigin {
 
 
     public static int[][] kClosestPointsToOrigin(int[][] points, int k) {
-        //To remove elements of greater distance we need maxHeap
+//        To remove elements of greater distance we need maxHeap
         PriorityQueue<Node> maxHeap = new PriorityQueue<>(new Node.NodeRevComparator());
         for (int[] point : points) {
             maxHeap.add(new Node(point, point[0] * point[0] + point[1] * point[1]));
