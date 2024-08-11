@@ -5,7 +5,7 @@
 
 You could think of a CDN like an ATM. If your money were only available from one bank in town, you’d have to make a time-consuming trip and stand in a long line every time you wanted to withdraw cash. However, with a cash machine on practically every corner, you have fast and easy access to your money any time you need it.
 <div align="center">
-  <img src="https://github.com/vipuldhurve/Code/blob/main/assets/cdn-traffic-load.jpg" alt="Image" style="display:block; margin:auto;">
+  <img src="https://github.com/vipuldhurve/Code/blob/main/assets/cdn.png" alt="Image" style="display:block; width:80%; height:auto; margin:auto;">
 </div>
 
 <br><br>
@@ -14,9 +14,8 @@ A content delivery network relies on three types of servers:
 - <b><i>Origin servers:</i></b> Origin servers contain the original versions of content and they function as the source of truth. Whenever content needs to be updated, changes are made on the origin server. An origin server may be owned and managed by a content provider or it may be hosted on the infrastructure of a third-party cloud provider like Amazon’s AWS S3 or Google Cloud Storage.
 - <b><i>Edge servers:</i></b> Edge servers are located in multiple geographical locations around the world, also called <b><i>“points of presence” (PoPs)</i></b>. The edge servers within these PoPs cache content that is copied from origin servers, and they are responsible for delivering that content to nearby users. When a user requests access to content on an origin server, they are redirected to a cached copy of the content on an edge server that’s geographically close to them. When cached content is out of date, the edge server requests updated content from the origin server. CDN edge servers are owned or managed by the CDN hosting provider.
 - <b><i>DNS servers:</i></b> Domain Name System (DNS) servers keep track of and supply IP addresses for origin and edge servers. When a client sends a request to an origin server, DNS servers respond with the name of a paired edge server from which the content can be served faster.
-
 <div align="center">
-  <img src="https://github.com/vipuldhurve/Code/blob/main/assets/how-cdn-work.png" alt="Image" style="display:block; margin:auto;">
+  <img src="https://github.com/vipuldhurve/Code/blob/main/assets/how-cdn-work.png" alt="Image" style="display:block; width:80%; height:auto; margin:auto;">
 </div>
 
 #### To deliver the optimal viewing experience, CDNs perform two essential functions:
@@ -28,6 +27,9 @@ A content delivery network relies on three types of servers:
 ### 1. Boost performance
 - Performance is the difference between a click giving you immediate access to new content and a click followed by a seven-second wait while a page loads or a video buffers. That wait time is called **“buffering”** and is symbolized by a familiar swirling circle icon on the screen. 
 - To ensure high performance and minimize buffering, CDNs deliver content that’s been pre-saved on nearby servers on the CDN’s network rather than sending requests to origin servers which may be halfway around the world.
+<div align="center">
+  <img src="https://github.com/vipuldhurve/Code/blob/main/assets/cdn-traffic-load.jpg" alt="Image" style="display:block; width:70%; height:auto; margin:auto;">
+</div>
 
 ### 2. Ensure availability
 - Availability means that content remains accessible to end users even during periods of excessive user traffic when many people are accessing content at the same time or if there are server outages in some parts of the internet. 
