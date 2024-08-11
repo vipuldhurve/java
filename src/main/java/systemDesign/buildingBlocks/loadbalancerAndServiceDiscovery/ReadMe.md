@@ -1,7 +1,7 @@
 # Load Balancer
 A load balancer is a device or an application that distributes the network traffic across multiple servers or instances to ensure no single server becomes overwhelmed.This helps in improving the performance, responsiveness, availability, reliability of application.
 <div align="center">
-  <img src="https://github.com/vipuldhurve/Code/blob/main/assets/load-balancer.jpg" alt="Image" style="display:block; width:80%; height:auto; margin:auto;">
+  <img src="https://github.com/vipuldhurve/Code/blob/main/assets/load-balancer.jpg" alt="Image" style="display:block; width:65%; height:auto; margin:auto;">
 </div> 
 
 ### Key Functions:
@@ -45,7 +45,7 @@ Service discovery is a mechanism that enables services to find and communicate w
 
 - <b>Service-Side Discovery:</b> A load balancer queries the service registry and directs the client requests to the appropriate service instances.
 <div align="center">
-  <img src="https://github.com/vipuldhurve/Code/blob/main/assets/server-side-service-registry.png" alt="Image" style="display:block; width:60%; height:auto; margin:auto;">
+  <img src="https://github.com/vipuldhurve/Code/blob/main/assets/server-side-service-registry.png" alt="Image" style="display:block; width:70%; height:auto; margin:auto;">
 </div> 
 
 #### Examples
@@ -60,6 +60,8 @@ In a microservices architecture, load balancers and service discovery mechanisms
 - <b>Service Health Check:</b> The service registry performs health checks on registered instances and updates their status
 - <b>Client Requests:</b> When a client needs to communicate with a service, it either queries the service registry directly (client-side discovery) or sends a request to the load balancer.
 - <b>Load Balancer Request Routing</b> The load balancer queries the service registry to get the addresses of healthy service instances and routes the client’s request accordingly.
-
+<div align="center">
+  <img src="https://github.com/vipuldhurve/Code/blob/main/assets/load-balancer-and-service-registry.png" alt="Image" style="display:block; width:80%; height:auto; margin:auto;">
+</div> 
 
 The load balancer interacts with the service discovery tool to get the list of available service instances and their health status, ensuring that traffic is routed only to healthy instances. This combination ensures efficient distribution of traffic, high availability, reliability, and seamless scaling of services.
