@@ -103,48 +103,48 @@ public class RotateMatrix {
     }
 
     public static void main(String[] args) {
-        int[][] matrix = new int[][]{
+        int[][] input = new int[][]{
                 {1, 2},
                 {3, 4}
         };
-        solveAndPrint(matrix);
+        solveAndPrint(input);
 
-        matrix = new int[][]{
+        input = new int[][]{
                 {1, 2, 3},
                 {4, 5, 6},
                 {7, 8, 9}
         };
-        solveAndPrint(matrix);
+        solveAndPrint(input);
 
-        matrix = new int[][]{
+        input = new int[][]{
                 {5, 1, 9, 11},
                 {2, 4, 8, 10},
                 {13, 3, 6, 7},
                 {15, 14, 12, 16}
         };
-        solveAndPrint(matrix);
+        solveAndPrint(input);
     }
 
-    private static void solveAndPrint(int[][] matrix) {
+    private static void solveAndPrint(int[][] input) {
 //        Print input
         System.out.println("------------- Input ------------- ");
-        printMatrix(matrix);
+        printMatrix(input);
 //       Rotate Clockwise
-        rotateMatrixClockwise(matrix);
+        rotateMatrixClockwise(input);
         System.out.println("--------------- Clockwise: ");
-        printMatrix(matrix);
+        printMatrix(input);
 //       Rotate Anti-clockwise
-        rotateMatrixAntiClockwise(matrix);
-        rotateMatrixAntiClockwise(matrix);
+        rotateMatrixAntiClockwise(input);
+        rotateMatrixAntiClockwise(input);
         System.out.println("--------------- Anti-clockwise: ");
-        printMatrix(matrix);
+        printMatrix(input);
         System.out.println("--------------------------------");
         System.out.print("-------------------------------- \n\n\n\n");
     }
 
     private static void printMatrix(int[][] matrix) {
         for (int i = 0; i < matrix.length; i++) {
-            for (int x : matrix[i]) System.out.print(x + " ");
+            for (int x : matrix[i]) System.out.print(x + "   ");
             System.out.println();
         }
     }
