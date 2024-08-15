@@ -1,4 +1,4 @@
-package streamApi.create;
+package streamApi.creation;
 
 import streamApi.Streams;
 
@@ -6,7 +6,7 @@ import java.util.*;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
-public class CreateStreams {
+public class StreamCreation {
 //        Without terminal operation streams does not get executed
 
     public static void main(String[] args) {
