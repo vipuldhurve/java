@@ -8,76 +8,6 @@ import java.util.stream.Stream;
 public class Streams {
 
     public static void main(String[] args) {
-//        ******** Notes ********
-//        Without terminal operation streams does not get executed
-
-//        Collections to stream .stream()
-        ArrayList<String> strList = new ArrayList<>(Arrays.asList("1a", "2b", "3c"));
-        System.out.println("-------- Collections Stream");
-        strList.stream().forEach(System.out::println);
-        System.out.println();
-
-//        Map To Stream    -> Map does not have a dedicated stream method
-//        .entrySet().stream()
-        Map<Character, int[]> bingoMap = new LinkedHashMap();
-        int bingoIndex = 1;
-        for (char c : "BINGO".toCharArray()) {
-            int[] numbers = new int[15];
-            int labelNo = bingoIndex;
-            Arrays.setAll(numbers, i -> i + labelNo);
-            bingoMap.put(c, numbers);
-            bingoIndex += 15;
-        }
-        System.out.println("-------- Map Stream");
-        bingoMap.entrySet()
-                .stream()
-                .map(e -> e.getKey() + " has range: " + e.getValue()[0] + " - "
-                        + e.getValue()[e.getValue().length - 1])
-                .forEach(System.out::println);
-        System.out.println();
-
-//        Arrays to stream
-        String[] strArr = {"one", "two", "three"};
-        System.out.print("-------- Arrays Stream & Stream.of(...values) : ");
-        var stream1 = Arrays.stream(strArr).sorted(Comparator.reverseOrder());
-
-//        Stream.of(...values)
-        var stream2 = Stream.of("Six", "Five", "Four")
-                .map(s -> s.toUpperCase());
-
-//        Concat Stream.concat()
-        System.out.println("Concat streamApi.Streams");
-        Stream.concat(stream2, stream1).forEach(System.out::println);
-        System.out.println();
-
-//        generate()
-        System.out.println("-------- Stream.generate() takes a supplier and limit");
-        Random random = new Random();
-        IntStream.generate(() -> random.nextInt(2))
-                .limit(10)
-                .forEach(s -> System.out.print(s + " "));
-        System.out.println();
-        System.out.println();
-
-//        iterate(seed, Unary)
-        System.out.println("-------- Stream.iterate(seed, Unary)");
-        System.out.println("First 20 prime numbers :");
-        IntStream.iterate(1, n -> n + 1)
-                .filter(Streams::isPrime)
-                .limit(20)
-                .forEach(s -> System.out.print(s + " "));
-        System.out.println();
-        System.out.println();
-
-//      iterate(seed, Predicate Limit,  Unary)
-        System.out.println("-------- Stream.iterate(seed, preicate, unary)");
-        System.out.println("Prime numbers <= limit :");
-        IntStream.iterate(1, n -> n <= 100, n -> n + 1)
-                .filter(Streams::isPrime)
-                .forEach(s -> System.out.print(s + " "));
-        System.out.println();
-        System.out.println();
-
 //        range & rangeclosed
         System.out.println("-------- range and rangeClosed");
         IntStream.range(1, 10)
@@ -99,7 +29,7 @@ public class Streams {
         System.out.println();
         System.out.println();
 
-        Random random1 = new Random();
+        Random random = new Random();
         Stream.generate(() -> (char) ('A' + random.nextInt(26)))
                 .limit(50)
                 .distinct()
@@ -169,6 +99,9 @@ public class Streams {
                 .map(Student::getCountry)
                 .collect(Collectors.joining(","));
         System.out.println("Countries: " + countries);
+
+        int[] x = new int[]{1, 2};
+        Stream<int[]> streamInt = Stream.of(x);
     }
 
     public static boolean isPrime(int number) {

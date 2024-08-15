@@ -19,12 +19,12 @@ public class HashMapImpl {
         private int n; //No. of nodes
         private int N; //buckets.length
 
-        private LinkedList<Node> buckets[];
+        private LinkedList<Node>[] buckets;
 
         @SuppressWarnings("unchecked")
-        public HashMap(int N) {
+        public HashMap() {
             this.n = 0;
-            this.N = N;
+            this.N = 4;
             this.buckets = new LinkedList[N];
             for (int i = 0; i < this.buckets.length; i++) {
                 this.buckets[i] = new LinkedList<>();
@@ -39,15 +39,16 @@ public class HashMapImpl {
         private int SearchInLL(int bi, K key) {
             LinkedList<Node> list = this.buckets[bi];
             for (int i = 0; i < list.size(); i++) {
-                if (list.get(i).key == key) {
+                if (list.get(i).key.equals(key)) {
                     return i;
                 }
             }
             return -1;
         }
 
+        @SuppressWarnings("unchecked")
         private void rehash() {
-            LinkedList<Node> oldBuckets[] = this.buckets;
+            LinkedList<Node>[] oldBuckets = this.buckets;
             this.N = this.N * 2;
             this.buckets = new LinkedList[this.N];
 
@@ -64,7 +65,7 @@ public class HashMapImpl {
             }
         }
 
-        public void put(K key, V value) {
+        private void put(K key, V value) {
             int bi = hashFunction(key); //bucket index
             int di = SearchInLL(bi, key); //data index
 
@@ -78,12 +79,12 @@ public class HashMapImpl {
             }
 
             double lambda = (double) n / N;
-            if (lambda > 2) {
+            if (lambda > 2.0) {
                 rehash();
             }
         }
 
-        public V get(K key) {
+        private V get(K key) {
             int bi = hashFunction(key); //bucket index
             int di = SearchInLL(bi, key); //data index
 
@@ -97,7 +98,7 @@ public class HashMapImpl {
             }
         }
 
-        public boolean containsKey(K key) {
+        private boolean containsKey(K key) {
             int bi = hashFunction(key); //bucket index
             int di = SearchInLL(bi, key); //data index
 
@@ -110,7 +111,7 @@ public class HashMapImpl {
             }
         }
 
-        public V remove(K key) {
+        private V remove(K key) {
             int bi = hashFunction(key); //bucket index
             int di = SearchInLL(bi, key); //data index
 
@@ -125,20 +126,18 @@ public class HashMapImpl {
             }
         }
 
-        public int size() {
+        private int size() {
             return n;
         }
 
-        public boolean isEmpty() {
+        private boolean isEmpty() {
             return n == 0;
         }
 
-        public ArrayList<K> keyset() {
+        private ArrayList<K> keyset() {
             ArrayList<K> keys = new ArrayList<>();
-            for (int i = 0; i < this.buckets.length; i++) {
-                LinkedList<Node> list = this.buckets[i];
-                for (int j = 0; j < list.size(); j++) {
-                    Node node = list.get(j);
+            for (LinkedList<Node> list : this.buckets) {
+                for (Node node : list) {
                     keys.add(node.key);
                 }
             }
@@ -148,12 +147,13 @@ public class HashMapImpl {
 
 
     public static void main(String[] args) {
-        HashMap<String, Integer> map = new HashMap<>(4);
+        HashMap<String, Integer> map = new HashMap<>();
         map.put("India", 1500);
         map.put("USA", 500);
         map.put("China", 2000);
+        map.put("Italy", 300);
 
-        System.out.println("Size = " + map.size());
+        System.out.println("Size after initialization = " + map.size());
 
         System.out.println("----------------");
         ArrayList<String> keys = map.keyset();
@@ -162,7 +162,16 @@ public class HashMapImpl {
         }
         System.out.println("----------------");
         map.remove("India");
+        map.remove("Italy");
         System.out.println("Does map contains key \"India\"? => " + map.containsKey("India"));
+        System.out.println("Size after removing 2 items = " + map.size());
+
+        System.out.println("----------------");
+        keys = map.keyset();
+        for (String key : keys) {
+            System.out.println(key + " " + map.get(key));
+        }
+
     }
 
 }
