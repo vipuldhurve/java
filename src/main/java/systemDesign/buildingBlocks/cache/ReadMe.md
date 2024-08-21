@@ -12,7 +12,7 @@ A cache is a <b><i>high-speed storage</i></b> that stores a small proportion of 
 
 **Note:** We always try to optimize cache for high cache hits and low cache miss.
 <div align="center">
-  <img src="https://github.com/vipuldhurve/Code/blob/main/assets/cache-working.png" alt="Image" style="display:block; width:90%; height:auto; margin:auto;">
+  <img src="https://github.com/vipuldhurve/Code/blob/main/assets/cache-working.png" alt="Image" style="display:block; margin:auto;">
 </div> 
 
 ### Real Life Examples of Caching
@@ -85,7 +85,7 @@ So read-through strategy simplifies the application code by abstracting away the
  
 **UseCase:** Read heavy applications, with infrequent writes.
 <div align="center">
-  <img src="https://github.com/vipuldhurve/Code/blob/main/assets/write-through-cache-strategy.png" alt="Image" style="display:block; width:90%; height:auto; margin:auto;">
+  <img src="https://github.com/vipuldhurve/Code/blob/main/assets/write-through-cache-strategy.png" alt="Image" style="display:block; width:70%; height:auto; margin:auto;">
 </div> 
 
 #### Disadvantages of Write-through
@@ -108,7 +108,7 @@ So read-through strategy simplifies the application code by abstracting away the
 
 **Use Case:** Write heavy applications
 <div align="center">
-  <img src="https://github.com/vipuldhurve/Code/blob/main/assets/write-back-cache-strategy.png" alt="Image" style="display:block; width:90%; height:auto; margin:auto;">
+  <img src="https://github.com/vipuldhurve/Code/blob/main/assets/write-back-cache-strategy.png" alt="Image" style="display:block; width:70%; height:auto; margin:auto;">
 </div> 
 
 ## Cache Eviction Policies
