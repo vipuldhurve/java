@@ -3,9 +3,11 @@
 ## What is Caching?
 Caching is the process of storing <b><i>frequently accessed data in a temporary high speed storage</i></b> called a cache to improve the speed of data access.
 
+<br><br>
 ## What is Cache?
 A cache is a <b><i>high-speed storage</i></b> that stores a small proportion of critical data so that requests for that data can be served faster.
 
+<br><br>
 ## How caching works?
 - <b><i>Cache Hit:</i></b> If the requested data is found in cache, it is returned directly.
 - <b><i>Cache Hit:</i></b> If the requested data is not found in cache, it is retrieved from the source database, stored in the cache, and then returned.
@@ -23,6 +25,7 @@ A cache is a <b><i>high-speed storage</i></b> that stores a small proportion of 
 - **Database Caching:** Database usually includes some level of caching in a default configuration, optimized for generic use case. Tweaking these settings for specific usage patterns can further boost performance.
 - **Application Caching:** In-memory cache such as Memcached and Redis are key-value stores between your application and your data storage. Since the data is held in RAM, it is much faster than typical databases where data is stored on disk. RAM is more limited than disk, so cache invalidation algorithms such as Least Recently Used(LRU) can help invalidate 'cold' entries and keep 'hot' data in RAM.
 
+<br><br>
 ## Levels of Caching
 There are multiple levels you can cache that fall into two general categories -> **database queries** and **objects**:
 - Row-level
@@ -47,6 +50,7 @@ See your data as an object, similar to what you do with your application code. H
 - Activity streams
 - User graph data
 
+<br><br>
 ## Types of Caching Strategies
 
 When data in the database is constantly being updated, it is important to ensure that the cache is also updated to reflect the changes. Otherwise, the application will serve outdated or stale data. So, we use cache invalidation techniques or caching strategies to maintain cache consistency.
@@ -111,6 +115,7 @@ So read-through strategy simplifies the application code by abstracting away the
   <img src="https://github.com/vipuldhurve/Code/blob/main/assets/write-back-cache-strategy.png" alt="Image" style="display:block; width:70%; height:auto; margin:auto;">
 </div> 
 
+<br><br>
 ## Cache Eviction Policies
 When the cache is full, some data needs to be removed to make room for new data. Common policies include:
 - <b><i>Least Recently Used (LRU):</i></b> Removes the least recently used data.
@@ -119,6 +124,7 @@ When the cache is full, some data needs to be removed to make room for new data.
 - <b><i>Random Replacement (RR):</i></b> Randomly selects and removes data.
 - <b><i>First In First Out (FIFO):</i></b> Removes the oldest data.
 
+<br><br>
 ## Different types of Caching used in System Design
 #### i. Browser Caching
 Stores resources like HTML, CSS, Javascript files in the web browser for faster retrieval on subsequent visits.
@@ -147,15 +153,21 @@ Uses multiple caching servers spread across a network to scale beyond the memory
 - 
 **Use Case:** Large scale applications
 
+<br><br>
 ## Advantages and Limitations of Caching
 - <b><i>Faster Access:</i><b> Reduces the need to retrieve data from slower data sources.
 - <b><i>Increased Throughput:</i></b> Provides much higher request rates compared to the main database.
 - <b><i>Scalability:</i></b> Improves scalability by offloading backend databases.
 - <b><i>Scalability:</i></b> Reduces overall system cost by offloading backend databases.
 - <b><i>Scalability:</i></b> Allows access to data even when the network connection is unreliable or offline.
-
+  
+<br><br>
 ## Disadvantages and Limitations of Caching
 - <b><i>Data Inconsistency:</i></b> Need to maintain consistency between caches and the source of truth such as the database through cache invalidation.
 - <b><i>Cache Misses:</i></b> Introduce latency.
 - <b><i>Initial Cache Warm-up:</i></b> Can cause temporary performance degradation.
 - <b><i>Limited Write Performance:</i></b> Most caching strategies do not improve write performance.
+
+
+<br><br>
+#### #Resource: [www.enjoyalgorithms.com/blog/caching-system-design-concept](https://www.enjoyalgorithms.com/blog/caching-system-design-concept/)
