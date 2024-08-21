@@ -85,7 +85,7 @@ So read-through strategy simplifies the application code by abstracting away the
  
 **UseCase:** Read heavy applications, with infrequent writes.
 <div align="center">
-  <img src="https://github.com/vipuldhurve/Code/blob/main/assets/write-through-cache-strategy.png" alt="Image" style="display:block; width:70%; height:auto; margin:auto;">
+  <img src="https://github.com/vipuldhurve/Code/blob/main/assets/write-through-cache-strategy.png" alt="Image" style="display:block; width:50%; height:auto; margin:auto;">
 </div> 
 
 #### Disadvantages of Write-through
@@ -108,7 +108,7 @@ So read-through strategy simplifies the application code by abstracting away the
 
 **Use Case:** Write heavy applications
 <div align="center">
-  <img src="https://github.com/vipuldhurve/Code/blob/main/assets/write-back-cache-strategy.png" alt="Image" style="display:block; width:50%; height:auto; margin:auto;">
+  <img src="https://github.com/vipuldhurve/Code/blob/main/assets/write-back-cache-strategy.png" alt="Image" style="display:block; width:70%; height:auto; margin:auto;">
 </div> 
 
 ## Cache Eviction Policies
