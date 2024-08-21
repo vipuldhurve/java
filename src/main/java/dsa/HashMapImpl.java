@@ -32,6 +32,7 @@ public class HashMapImpl {
         }
 
         private int hashFunction(K key) {
+//            Uses key.hashCode() internally to get hashcode for key
             int code = key.hashCode();
             return Math.abs(code) % this.N;
         }
@@ -39,6 +40,7 @@ public class HashMapImpl {
         private int SearchInLL(int bi, K key) {
             LinkedList<Node> list = this.buckets[bi];
             for (int i = 0; i < list.size(); i++) {
+//                Uses key.equals() internally to check equality
                 if (list.get(i).key.equals(key)) {
                     return i;
                 }
