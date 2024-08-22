@@ -10,7 +10,7 @@ A cache is a <b><i>high-speed storage</i></b> that stores a small proportion of 
 <br><br>
 ## How caching works?
 - <b><i>Cache Hit:</i></b> If the requested data is found in cache, it is returned directly.
-- <b><i>Cache Hit:</i></b> If the requested data is not found in cache, it is retrieved from the source database, stored in the cache, and then returned.
+- <b><i>Cache Miss:</i></b> If the requested data is not found in cache, it is retrieved from the source database, stored in the cache, and then returned.
 
 **Note:** We always try to optimize cache for high cache hits and low cache miss.
 <div align="center">
