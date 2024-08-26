@@ -85,8 +85,8 @@ public class StreamCreation {
 
         System.out.println("-------- Stream.of(object[])");
         String[] strArray = new String[]{"four", "five", "six"};
-        Stream.of(strArray)
-                .map(String::toUpperCase)
+        Stream<String> strSTream = Stream.of(strArray);
+        strSTream.map(String::toUpperCase)
                 .forEach(e -> System.out.print(e + " "));
         System.out.println();
 
