@@ -9,7 +9,7 @@ public class LongestSubstringWithKUniqueChars {
 
 //    Given a string you need to print longest possible substring
 //    that has exactly M unique characters.
-//    If there is more than onesubstring of longest possible length,
+//    If there is more than one substring of longest possible length,
 //    then print any one of them
 
 //    Input: Str = “aabbcc”, k = 1
