@@ -4,14 +4,14 @@ import java.util.*;
 
 public class FlattenObjectArray {
 
-    private static void flatten(Object[] array, List<Object> result){
-        for(Object element: array){
-            if(element instanceof Object[]){
+    private static void flatten(Object[] array, List<Integer> result) {
+        for (Object element : array) {
+            if (element instanceof Object[]) {
 //                recursively flatten the nested array
-                flatten( (Object[]) element, result );
-            } else{
+                flatten((Object[]) element, result);
+            } else {
 //                Add the non-array element to the result list
-                result.add(element);
+                result.add((Integer) element);
             }
         }
     }
@@ -25,14 +25,14 @@ public class FlattenObjectArray {
                 },
                 8, 9, 10
         };
-        List<Object> flattenedList = new ArrayList<>();
+        List<Integer> flattenedList = new ArrayList<>();
         flatten(array, flattenedList);
 //        Convert the list to array if needed
         Object[] flattenedArray = flattenedList.toArray();
 
 //        Print the flattened array
-        for (Object obj: flattenedArray){
-            System.out.print(obj +" ");
+        for (Object obj : flattenedArray) {
+            System.out.print(obj + " ");
         }
 
     }
