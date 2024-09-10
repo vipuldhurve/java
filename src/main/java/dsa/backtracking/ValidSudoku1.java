@@ -3,7 +3,9 @@ package dsa.backtracking;
 import java.awt.*;
 
 public class ValidSudoku1 {
-//    VALID PARTIALLY FILLED SUDOKU
+//    VALID SUDOKU BOARD:
+//    You need to check if given sudoku board is valid sudoku or not
+//    irrespective if it is not solvable
 
 //    Determine if a 9 x 9 Sudoku board is valid.
 //    Only the filled cells need to be validated according to the following rules:
@@ -17,7 +19,7 @@ public class ValidSudoku1 {
 //    A Sudoku board (partially filled) could be valid but is not necessarily solvable.
 //    Only the filled cells need to be validated according to the mentioned rules.
 
-//    Example: Below is a VALID PARTIALLY FILLED SUDOKU and should return true
+//    Example: Below is a VALID PARTIALLY FILLED SUDOKU BOARD and should return true
 //    [
 //            [".","8","7","6","5","4","3","2","1"],
 //            ["2",".",".",".",".",".",".",".","."],

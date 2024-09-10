@@ -1,6 +1,10 @@
 package dsa.backtracking;
 
 public class ValidSudoku2 {
+//    VALID SUDOKU SOLUTION:
+//    You need to check if given sudoku board is valid sudoku and possible solution exists
+//    If exists a possible solution print it
+
 //    Determine if a 9 x 9 Sudoku board is valid.
 //    Only the filled cells need to be validated according to the following rules:
 
@@ -9,8 +13,9 @@ public class ValidSudoku2 {
 //    3. Each of the nine 3 x 3 sub-boxes of the grid must contain the digits 1-9
 //    without repetition.
 
-//    Example: Below is a INVALID SUDOKU and should return false as
-//    It is not possible to solve it
+//    Example: It is not possible to solve the below sudoku
+//    Below is a INVALID SUDOKU and should return false
+//
 //    [
 //            [".","8","7","6","5","4","3","2","1"],
 //            ["2",".",".",".",".",".",".",".","."],
