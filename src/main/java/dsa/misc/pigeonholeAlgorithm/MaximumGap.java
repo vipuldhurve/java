@@ -19,8 +19,7 @@ public class MaximumGap {
 //    Output: 0
 
     //    PIGEON-HOLE PRINCIPLE
-//    TIME COMPLEXITY: O(N)
-//    SPACE COMPLEXITY: O(N)
+//    TIME COMPLEXITY: O(N) | SPACE COMPLEXITY: O(N)
     private static int maximumGap(int[] nums) {
         int n = nums.length;
         if (n < 2) return 0;
