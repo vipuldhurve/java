@@ -10,7 +10,7 @@ public class ValidSudoku2 {
 //    without repetition.
 
 //    Example: Below is a INVALID SUDOKU and should return false as
-//    It is not possible tom solve it
+//    It is not possible to solve it
 //    [
 //            [".","8","7","6","5","4","3","2","1"],
 //            ["2",".",".",".",".",".",".",".","."],
