@@ -29,6 +29,9 @@ public class ValidSudoku2 {
 //    ]
 //    Output: FALSE
 
+
+    //    TIME COMPLEXITY: O(9^(N*N))
+//    worst case i.e. when all cells are empty, and we try all 9 values for each cell
     private static boolean isSafe(char[][] board, int row, int col, int value) {
 //        Convert int to char
         char charValue = (char) (value + '0');

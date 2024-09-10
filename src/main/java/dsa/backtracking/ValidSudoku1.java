@@ -33,6 +33,11 @@ public class ValidSudoku1 {
 //    ]
 //    Output: TRUE
 
+    //    TIME COMPLEXITY: O(N^3)
+//    O(N^2) for isValidSudoku1 and O(N) for is Safe
+//    In worst case we check all values of board N*N and N=9 for standard sudoku
+//    O(N^2)*O(N) => (N^3) => O(729)
+//    => O(1)
     private static boolean isSafe(char[][] board, int row, int col) {
         char cellValue = board[row][col];
 //        Check row and column
