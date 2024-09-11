@@ -1,7 +1,7 @@
 package dsa.graph.problems;
 
-import dsa.graph.util.GraphUtil;
-import dsa.graph.util.GraphNode;
+import dsa.util.GraphUtil;
+import dsa.util.GraphNode;
 
 import java.util.*;
 

@@ -1,6 +1,4 @@
-package dsa.graph.util;
-
-import dsa.graph.util.GraphNode;
+package dsa.util;
 
 import java.util.HashSet;
 import java.util.Set;
