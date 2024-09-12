@@ -80,7 +80,7 @@ public class Permutation {
             used[i] = true;
 //            Recursively build rest of the permutation
             sortedPermuteBacktrack(nums, permutation, used, result);
-//            Backtrack: remove nums[i] and mark it ias unused
+//            Backtrack: remove nums[i] and mark it as unused
             permutation.remove(permutation.size() - 1);
             used[i] = false;
         }
