@@ -29,6 +29,7 @@ public class Permutation {
             result.add(singleNum);
             return result;
         }
+
 //        Find permutation of array if size > 1
         for (int i = 0; i < nums.length; i++) {
             int currentNum = nums[i];
