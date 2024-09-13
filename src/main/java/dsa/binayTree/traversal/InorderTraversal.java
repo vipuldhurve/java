@@ -1,6 +1,7 @@
 package dsa.binayTree.traversal;
 
 
+import dsa.util.Print;
 import dsa.util.TreeNode;
 
 import java.util.ArrayList;
@@ -8,7 +9,7 @@ import java.util.List;
 import java.util.Stack;
 
 public class InorderTraversal {
-//             1
+    //             1
 //            / \
 //           2   3
 //         /  \
@@ -35,21 +36,22 @@ public class InorderTraversal {
         return inorder;
     }
 
+    private static void solve(Integer[] levelOrder) {
+        TreeNode root = TreeNode.createBinaryTreeViaLevelOrder(levelOrder);
+        System.out.println("INPUT: ");
+        Print.printTree(root);
+        System.out.println("INORDER: " + inorder(root) + "\n\n");
+    }
+
     public static void main(String[] args) {
-        System.out.println("---- Case 1");
-        Integer[] binaryTree = {1, 2, 3, 4, 5, null, null, null, null, 6, 7};
-        TreeNode root = TreeNode.createBinaryTreeViaLevelOrder(binaryTree);
-        System.out.println(inorder(root) + "\n");
+        Integer[] levelOrder = {1, 2, 3, 4, 5, null, null, null, null, 6, 7};
+        solve(levelOrder);
 
-        System.out.println("---- Case 2");
-        binaryTree = new Integer[]{};
-        root = TreeNode.createBinaryTreeViaLevelOrder(binaryTree);
-        System.out.println(inorder(root) + "\n");
+        levelOrder = new Integer[]{};
+        solve(levelOrder);
 
-        System.out.println("---- Case 3");
-        binaryTree = new Integer[]{2, null, 3};
-        root = TreeNode.createBinaryTreeViaLevelOrder(binaryTree);
-        System.out.println(inorder(root) + "\n");
+        levelOrder = new Integer[]{2, null, 3};
+        solve(levelOrder);
     }
 
 }
