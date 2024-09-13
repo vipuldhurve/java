@@ -1,4 +1,4 @@
-package dsa.graph.problems;
+package dsa.graph;
 
 import java.util.Scanner;
 

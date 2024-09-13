@@ -7,7 +7,7 @@ public class SortKSortedArray {
 //    Geeks For Geeks ------------
 //    Given an array of N elements,
 //    where each element is at most K away from its target position,
-//    devise an algorithm that sorts in O(N log K) time.
+//    devise an traversal that sorts in O(N log K) time.
 
 //    Input: arr[] = {6, 5, 3, 2, 8, 10, 9}, K = 3
 //    Output: arr[] = {2, 3, 5, 6, 8, 9, 10}

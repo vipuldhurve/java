@@ -1,11 +1,13 @@
-package dsa.binayTree;
+package dsa.binayTree.traversal;
 
+
+import dsa.util.TreeNode;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Stack;
 
-public class postorderTraversal {
+public class PostorderTraversal {
 //             1
 //            / \
 //           2   3
@@ -54,18 +56,18 @@ public class postorderTraversal {
     public static void main(String[] args) {
         System.out.println("---- Case 1");
         Integer[] binaryTree = {1, 2, 3, 4, 5, null, null, null, null, 6, 7};
-        TreeNode root = TreeNode.createBinaryTree(binaryTree);
-        System.out.println(postorder2Stack(root));
+        TreeNode root = TreeNode.createBinaryTreeViaLevelOrder(binaryTree);
+        System.out.println(postorder2Stack(root) + "\n");
 
         System.out.println("---- Case 2");
         binaryTree = new Integer[]{};
-        root = TreeNode.createBinaryTree(binaryTree);
-        System.out.println(postorder2Stack(root));
+        root = TreeNode.createBinaryTreeViaLevelOrder(binaryTree);
+        System.out.println(postorder2Stack(root) + "\n");
 
         System.out.println("---- Case 3");
         binaryTree = new Integer[]{2, null, 3};
-        root = TreeNode.createBinaryTree(binaryTree);
-        System.out.println(postorder2Stack(root));
+        root = TreeNode.createBinaryTreeViaLevelOrder(binaryTree);
+        System.out.println(postorder2Stack(root) + "\n");
     }
 
 }

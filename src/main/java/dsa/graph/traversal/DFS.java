@@ -1,4 +1,4 @@
-package dsa.graph.algorithm;
+package dsa.graph.traversal;
 
 import java.util.*;
 

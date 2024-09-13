@@ -1,4 +1,4 @@
-package dsa.graph.problems;
+package dsa.graph;
 
 import java.util.LinkedList;
 import java.util.Queue;
@@ -73,9 +73,9 @@ public class RottingFruit {
     }
 
     private static void solve(int[][] grid) {
-        System.out.println("Input: ");
-        Print.print2DArray(grid);
-        System.out.println("Output: " + orangesRotting(grid) + "\n");
+        System.out.println("INPUT: ");
+        Print.intMatrix(grid);
+        System.out.println("OUTPUT: " + orangesRotting(grid) + "\n");
     }
 
     public static void main(String[] args) {

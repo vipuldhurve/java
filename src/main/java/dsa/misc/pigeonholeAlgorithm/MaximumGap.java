@@ -7,7 +7,7 @@ public class MaximumGap {
 //    return the maximum difference between two successive elements in its sorted form.
 //    If the array contains less than two elements, return 0.
 
-//    NOTE: You must write an algorithm that runs in linear time and uses linear extra space.
+//    NOTE: You must write an traversal that runs in linear time and uses linear extra space.
 //    i.e. WITHOUT SORTING ARRAY
 
 //    Example 1:

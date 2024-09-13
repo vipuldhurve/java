@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 public class HappyNumber {
 
-//    Write an algorithm to determine if a number n is happy.
+//    Write an traversal to determine if a number n is happy.
 //    A happy number is a number defined by the following process:
 
 //    1. Starting with any positive integer,

@@ -1,4 +1,4 @@
-package dsa.graph.problems;
+package dsa.graph;
 
 import java.util.*;
 
@@ -103,9 +103,9 @@ public class PacificAtlanticWaterFlow {
     }
 
     private static void solve(int[][] heights) {
-        System.out.println("Input: ");
-        Print.print2DArray(heights);
-        System.out.println("Output: " + pacificAtlantic(heights) + "\n");
+        System.out.println("INPUT: ");
+        Print.intMatrix(heights);
+        System.out.println("OUTPUT: " + pacificAtlantic(heights) + "\n");
     }
 
     public static void main(String[] args) {
