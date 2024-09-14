@@ -1,7 +1,7 @@
 package dsa.binayTree.traversal;
 
 
-import dsa.util.Print;
+import dsa.util.Printer;
 import dsa.util.TreeNode;
 
 import java.util.ArrayList;
@@ -10,12 +10,12 @@ import java.util.Stack;
 
 public class PreorderTraversal {
     //             1
-//            / \
-//           2   3
-//         /  \
-//        4    5
-//            / \
-//           6   7
+    //            / \
+    //           2   3
+    //         /  \
+    //        4    5
+    //            / \
+    //           6   7
 //    Node Left Right -> 1 2 4 5 6 7 3
     public static List<Integer> preorder(TreeNode root) {
         List<Integer> preOrder = new ArrayList<>();
@@ -35,7 +35,7 @@ public class PreorderTraversal {
     private static void solve(Integer[] levelOrder) {
         TreeNode root = TreeNode.createBinaryTreeViaLevelOrder(levelOrder);
         System.out.println("INPUT: ");
-        Print.printTree(root);
+        Printer.printBinaryTree(root);
         System.out.println("PREORDER: " + preorder(root) + "\n\n");
     }
 

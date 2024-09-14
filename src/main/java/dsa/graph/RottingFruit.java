@@ -2,7 +2,7 @@ package dsa.graph;
 
 import java.util.LinkedList;
 import java.util.Queue;
-import dsa.util.Print;
+import dsa.util.Printer;
 
 public class RottingFruit {
 //    You are given a 2-D matrix grid. Each cell can have one of three possible values:
@@ -74,7 +74,7 @@ public class RottingFruit {
 
     private static void solve(int[][] grid) {
         System.out.println("INPUT: ");
-        Print.intMatrix(grid);
+        Printer.printIntMatrix(grid);
         System.out.println("OUTPUT: " + orangesRotting(grid) + "\n");
     }
 

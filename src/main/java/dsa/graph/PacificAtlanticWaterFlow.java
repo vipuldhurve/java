@@ -2,7 +2,7 @@ package dsa.graph;
 
 import java.util.*;
 
-import dsa.util.Print;
+import dsa.util.Printer;
 
 public class PacificAtlanticWaterFlow {
 //    There is an m x n rectangular island that borders both the Pacific Ocean and Atlantic Ocean.
@@ -104,7 +104,7 @@ public class PacificAtlanticWaterFlow {
 
     private static void solve(int[][] heights) {
         System.out.println("INPUT: ");
-        Print.intMatrix(heights);
+        Printer.printIntMatrix(heights);
         System.out.println("OUTPUT: " + pacificAtlantic(heights) + "\n");
     }
 

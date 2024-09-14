@@ -1,7 +1,7 @@
 package dsa.binayTree.traversal;
 
 
-import dsa.util.Print;
+import dsa.util.Printer;
 import dsa.util.TreeNode;
 
 import java.util.ArrayList;
@@ -10,12 +10,12 @@ import java.util.Stack;
 
 public class PostorderTraversal {
     //             1
-//            / \
-//           2   3
-//         /  \
-//        4    5
-//            / \
-//           6   7
+    //            / \
+    //           2   3
+    //         /  \
+    //        4    5
+    //            / \
+    //           6   7
 //    Left Right Node -> 4 6 7 5 2 3 1
     public static List<Integer> postorder2Stack(TreeNode node) {
         List<Integer> postorder = new ArrayList<>();
@@ -57,7 +57,7 @@ public class PostorderTraversal {
     private static void solve(Integer[] levelOrder) {
         TreeNode root = TreeNode.createBinaryTreeViaLevelOrder(levelOrder);
         System.out.println("INPUT: ");
-        Print.printTree(root);
+        Printer.printBinaryTree(root);
         System.out.println("POSTORDER: " + postorder2Stack(root) + "\n\n");
     }
 

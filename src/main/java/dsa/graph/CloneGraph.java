@@ -1,7 +1,7 @@
 package dsa.graph;
 
 import dsa.util.GraphNode;
-import dsa.util.Print;
+import dsa.util.Printer;
 
 import java.util.*;
 
@@ -47,11 +47,11 @@ public class CloneGraph {
     private static void solve(GraphNode input){
 //        Input
         System.out.println("INPUT: ");
-        Print.graphNodes(input);
+        Printer.printGraphNodes(input);
 //        Output
         System.out.println("OUTPUT: ");
         GraphNode graphCopy = cloneGraph(input);
-        Print.graphNodes(graphCopy);
+        Printer.printGraphNodes(graphCopy);
         System.out.println();
     }
 

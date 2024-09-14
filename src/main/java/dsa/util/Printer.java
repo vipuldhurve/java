@@ -2,10 +2,10 @@ package dsa.util;
 
 import java.util.*;
 
-public class Print {
+public class Printer {
 
     // Prints INT Matrix In A WELL Formatted Grid
-    public static void intMatrix(int[][] arr) {
+    public static void printIntMatrix(int[][] arr) {
         for (int[] x : arr) {
             for (int y : x) System.out.print(y + "   ");
             System.out.println();
@@ -13,7 +13,7 @@ public class Print {
     }
 
     // Prints Graph Nodes And Neighbors
-    public static void graphNodes(GraphNode node) {
+    public static void printGraphNodes(GraphNode node) {
         Set<GraphNode> visitedGraphNode = new HashSet<>();
         printGraphNodesDFS(node, visitedGraphNode);
     }
@@ -28,7 +28,7 @@ public class Print {
     }
 
     // Prints Binary Tree Structure
-    public static void printTree(TreeNode root) {
+    public static void printBinaryTree(TreeNode root) {
         if (root == null) return;
         // Find the maximum depth of the tree to determine spacing
         int maxLevel = getMaxLevel(root);
