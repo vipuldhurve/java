@@ -1,6 +1,8 @@
 package dsa.twoPointers;
 
-public class isPalindrome {
+import java.util.Arrays;
+
+public class ValidPalindrome {
 //    Given a string s, return true if it is a palindrome, otherwise return false.
 //    It is also case-insensitive and ignores all non-alphanumeric characters.
 
@@ -12,6 +14,7 @@ public class isPalindrome {
 
     public static boolean isPalindromeSolve(String s) {
         if (s == null) return false;
+
         int left = 0, right = s.length() - 1;
 
         while (left < right) {
@@ -32,16 +35,16 @@ public class isPalindrome {
     }
 
     public static void main(String[] args) {
-        String s = "Was it a car or a cat I saw?";
-        System.out.println("\"" + s + "\" " + isPalindromeSolve(s));
-
-        s = "tab a cat";
-        System.out.println("\"" + s + "\" " + isPalindromeSolve(s));
-
-        s = "";
-        System.out.println("\"" + s + "\" " + isPalindromeSolve(s));
-
-        s = null;
-        System.out.println("\"" + s + "\" " + isPalindromeSolve(s));
+        String[] input = new String[]{
+                "Was it a car or a cat I saw?",
+                "tab a cat",
+                "ta#b *a #bat",
+                "",
+                null
+        };
+        Arrays.stream(input)
+                .peek(i -> System.out.println("INPUT: " + i))
+                .map(ValidPalindrome::isPalindromeSolve)
+                .forEach(o -> System.out.println("OUTPUT: " + o.toString().toUpperCase() + "\n"));
     }
 }

@@ -25,7 +25,7 @@ public class KClosestNumbers {
 
 
     //Time Complexity - nlog(k)
-    public static int[] kClosest(int[] arr, int k, int x) {
+    private static int[] kClosest(int[] arr, int num, int k) {
         if (k == arr.length) return arr;
         //Sorting of absolute difference between array element and x to find k closest
         //So we need maxheap
@@ -40,7 +40,7 @@ public class KClosestNumbers {
 
         for (int i = 0; i < arr.length; i++) {
 
-            if (Math.abs(arr[i] - x) != 0) maxHeap.add(new Node(Math.abs(arr[i] - x), arr[i]));
+            if (Math.abs(arr[i] - num) != 0) maxHeap.add(new Node(Math.abs(arr[i] - num), arr[i]));
             if (maxHeap.size() > k) maxHeap.poll();
         }
 
@@ -54,30 +54,22 @@ public class KClosestNumbers {
         return kClosest;
     }
 
+    private static void solve(int[] input, int num, int k) {
+        System.out.println("INPUT: "+ Arrays.toString(input) + "  num = " + num  + "  k = " + k);
+        System.out.println("OUTPUT: " + Arrays.toString(kClosest(input, num, k)) +"\n");
+    }
+
 
     public static void main(String[] args) {
-        int[] arr = new int[]{12, 16, 22, 30, 35, 39, 42, 45, 48, 50, 53, 55, 56};
-        int k = 4, x = 35;
+        int[] input = new int[]{12, 16, 22, 30, 35, 39, 42, 45, 48, 50, 53, 55, 56};
+        int num = 35, k = 4;
 
-        System.out.println("Input: " + Arrays.toString(arr) + "  x = " + x + "  k = " + k);
-        System.out.print("Output: ");
-        printArray(kClosest(arr, k, x));
-        System.out.println();
+        solve(input, num, k);
 
-        arr = new int[]{1, 2, 3, 4, 5};
+        input = new int[]{1, 2, 3, 4, 5};
+        num = 3;
         k = 4;
-        x = 3;
-
-        System.out.println("Input: " + Arrays.toString(arr) + "  x = " + x + "  k = " + k);
-        System.out.print("Output: ");
-        printArray(kClosest(arr, k, x));
-        System.out.println();
+        solve(input, num, k);
     }
 
-    public static void printArray(int[] A) {
-        for (int a : A) {
-            System.out.print(a + " ");
-        }
-        System.out.println(" ");
-    }
 }

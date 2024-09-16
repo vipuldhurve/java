@@ -38,7 +38,7 @@ public class LastStoneWeight {
 //            with weight = stone1 - stone2
             if (stone1 > stone2) maxHeap.offer(stone1 - stone2);
         }
-        if (maxHeap.size() > 0) return maxHeap.peek();
+        if (!maxHeap.isEmpty()) return maxHeap.peek();
         return 0;
     }
 
@@ -49,8 +49,8 @@ public class LastStoneWeight {
         };
 
         Arrays.stream(stones)
-                .peek(el -> System.out.println("Input: " + Arrays.toString(el)))
+                .peek(el -> System.out.println("INPUT: " + Arrays.toString(el)))
                 .map(LastStoneWeight::lastStoneWeight)
-                .forEach(el -> System.out.println("Output: " + el + "\n"));
+                .forEach(el -> System.out.println("OUTPUT: " + el + "\n"));
     }
 }

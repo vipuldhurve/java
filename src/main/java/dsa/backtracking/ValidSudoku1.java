@@ -81,12 +81,12 @@ public class ValidSudoku1 {
     }
 
     private static void solve(char[][] board) {
-        System.out.println("Input: ");
+        System.out.println("INPUT: ");
         for (char[] row : board) {
             for (char c : row) System.out.print(c + "   ");
             System.out.println();
         }
-        System.out.println("Output: " + String.valueOf(isValidSudoku1(board, 0, 0)).toUpperCase() + "\n");
+        System.out.println("OUTPUT: " + String.valueOf(isValidSudoku1(board, 0, 0)).toUpperCase() + "\n");
     }
 
     public static void main(String[] args) {

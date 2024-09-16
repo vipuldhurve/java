@@ -37,9 +37,8 @@ public class MaxWaterContainer {
     }
 
     public static void solve(int[] heights){
-        System.out.println("Input: " + Arrays.toString(heights));
-        System.out.println("Output: " + maxArea(heights));
-        System.out.println();
+        System.out.println("INPUT: " + Arrays.toString(heights));
+        System.out.println("OUTPUT: " + maxArea(heights) + "\n");
     }
 
     public static void main(String[] args) {

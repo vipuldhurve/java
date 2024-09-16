@@ -40,11 +40,11 @@ public class Subsets {
                 {0}
         };
         Arrays.stream(inputs)
-                .peek(i -> System.out.println("Input: " + Arrays.toString(i)))
+                .peek(i -> System.out.println("INPUT: " + Arrays.toString(i)))
                 .forEach(i -> {
                     powerSet = new ArrayList<>();
                     findSubsets(i, 0, new ArrayList<>());
-                    System.out.println("Output: " + powerSet.toString() + "\n");
+                    System.out.println("OUTPUT: " + powerSet.toString() + "\n");
                 });
     }
 }

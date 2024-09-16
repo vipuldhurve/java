@@ -16,20 +16,20 @@ public class SortKSortedArray {
 //    Output: arr[] = {4, 7, 8, 9, 10, 50, 60, 70}
 
 
-    //Time Complexity - nlog(k)
-    public static int[] sortKSorted(int[] arr, int k) {
+    //Time Complexity - Nlog(K)
+    private static int[] sortKSorted(int[] arr, int k) {
         //For kth largest we need a minHeap for removing elements smaller than k
         PriorityQueue<Integer> minHeap = new PriorityQueue<>();
         int[] sorted = new int[arr.length];
-        int x=0;
-        for (int i=0; i < arr.length; i++) {
+        int x = 0;
+        for (int i = 0; i < arr.length; i++) {
             minHeap.add(arr[i]);
-            if (minHeap.size() > k){
+            if (minHeap.size() > k) {
                 sorted[x++] = minHeap.poll();
             }
         }
 
-        while (minHeap.size()>0) {
+        while (minHeap.size() > 0) {
             sorted[x] = minHeap.poll();
             x++;
         }
@@ -45,8 +45,8 @@ public class SortKSortedArray {
         int[] kValues = new int[]{3, 4};
 
         for (int i = 0; i < arr.length; i++) {
-            System.out.println("Input: " + Arrays.toString(arr[i]) +" and k = " +kValues[i]);
-            System.out.println("Output: " + Arrays.toString(sortKSorted(arr[i], kValues[i])));
+            System.out.println("INPUT: " + Arrays.toString(arr[i]) + " and k = " + kValues[i]);
+            System.out.println("OUTPUT: " + Arrays.toString(sortKSorted(arr[i], kValues[i])));
             System.out.println();
         }
 

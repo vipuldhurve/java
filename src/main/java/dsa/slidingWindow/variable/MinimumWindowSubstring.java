@@ -38,8 +38,9 @@ public class MinimumWindowSubstring {
                         c -> c,
                         c -> 1,
                         Integer::sum));
-        int count = m.size();
 
+//        Unique characters in string t
+        int count = m.size();
 //        ans
         int i = 0;
         int j = 0;
@@ -55,21 +56,22 @@ public class MinimumWindowSubstring {
             }
 //            Check value of count
             if (count == 0) {
+//                if(minLen > right - left + 1) minLen = right - left + 1;
 //                Try to optimize the solution by moving left
                 while (count == 0) {
                     char cl = s.charAt(left);
-
+//                    If cl is present in string t(map)
                     if (m.containsKey(cl)) {
                         m.put(cl, m.get(cl) + 1);
                         if (m.get(cl) == 1) count++;
-
+//                        Update optimized answer before moving left
                         if (right - left + 1 < minLen) {
                             minLen = right - left + 1;
                             i = left;
                             j = right;
                         }
                     }
-//                    After doing calulations for left char removal removing it
+//                    After doing calculations for left char removal removing it
                     left++;
                 }
             }
@@ -81,8 +83,8 @@ public class MinimumWindowSubstring {
     }
 
     private static void solve(String s, String t){
-        System.out.println("Input: s = \"" + s + "\"  t = \"" + t + "\"");
-        System.out.println("Output: \"" + minimumWindowSubstring(s,t) + "\" \n");
+        System.out.println("INPUT: s = \"" + s + "\"  t = \"" + t + "\"");
+        System.out.println("OUTPUT: \"" + minimumWindowSubstring(s,t) + "\" \n");
 
     }
 

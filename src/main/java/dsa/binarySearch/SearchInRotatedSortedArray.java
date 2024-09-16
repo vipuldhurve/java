@@ -27,8 +27,8 @@ public class SearchInRotatedSortedArray {
     }
 
     private static void solve(int[] nums, int target) {
-        System.out.println("Input: " + Arrays.toString(nums) + "  target = " + target);
-        System.out.println("Search Index: " + binarySearch(nums, target) + "\n");
+        System.out.println("INPUT: " + Arrays.toString(nums) + "  target = " + target);
+        System.out.println("INDEX: " + binarySearch(nums, target) + "\n");
     }
 
     public static void main(String[] args) {

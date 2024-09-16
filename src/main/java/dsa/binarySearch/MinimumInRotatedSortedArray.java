@@ -3,8 +3,8 @@ package dsa.binarySearch;
 import java.util.Arrays;
 
 public class MinimumInRotatedSortedArray {
-//    You are given an array of length n which was originally sorted in
-//    ascending order. It has now been rotated between 1 and n times.
+//    You are given an array of length n which was originally sorted in ascending order.
+//    It has now been rotated between 1 and n times.
 //    For example, the array nums = [1,2,3,4,5,6] might become:
 
 //    1. [3,4,5,6,1,2] if it was rotated 4 times.
@@ -45,8 +45,8 @@ public class MinimumInRotatedSortedArray {
         };
 
         Arrays.stream(inputArrays)
-                .peek(arr -> System.out.println("Input: " + Arrays.toString(arr)))
+                .peek(arr -> System.out.println("INPUT: " + Arrays.toString(arr)))
                 .map(MinimumInRotatedSortedArray::binarySearch)
-                .forEach(el -> System.out.println("Output: " + el + "\n"));
+                .forEach(el -> System.out.println("OUTPUT: " + el + "\n"));
     }
 }

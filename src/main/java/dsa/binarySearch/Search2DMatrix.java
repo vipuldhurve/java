@@ -41,13 +41,13 @@ public class Search2DMatrix {
     }
 
     private static void solve(int[][] matrix, int target) {
-        System.out.println("Input Matrix:");
+        System.out.println("INPUT:");
         for (int[] row : matrix) {
             for (int col : row) System.out.print(col + " ");
             System.out.println();
         }
-        System.out.println("Target: " + target);
-        System.out.println("Ouput: " + searchMatrix(matrix, target) + "\n");
+        System.out.println("TARGET: " + target);
+        System.out.println("OUTPUT: " + searchMatrix(matrix, target) + "\n");
     }
 
     public static void main(String[] args) {

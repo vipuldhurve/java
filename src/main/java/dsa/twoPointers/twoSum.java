@@ -1,5 +1,6 @@
 package dsa.twoPointers;
 
+import java.lang.reflect.Array;
 import java.util.Arrays;
 
 public class twoSum {
@@ -13,7 +14,9 @@ public class twoSum {
 //    Input: numbers = [1,2,3,4], target = 3
 //    Output: [1,2]
 
-    private static int[] twoSumTwoPointerSolve(int[] nums, int target) {
+    //    TIME COMPLEXITY: O(N) as input array is already sorted
+    //    SPACE COMPLEXITY: O(1)
+    private static int[] twoSumViaTwoPointer(int[] nums, int target) {
         int[] result = {-1, -1};
         if (nums == null || nums.length <= 1) return result;
 
@@ -32,15 +35,23 @@ public class twoSum {
         return result;
     }
 
+    private static void solve(int[] input, int target) {
+        System.out.println("INPUT: " + Arrays.toString(input) + "  TARGET = " + target);
+        System.out.println("OUTPUT: " + Arrays.toString(twoSumViaTwoPointer(input, target)) + "\n");
+    }
+
 
     public static void main(String[] args) {
-        int[] nums = {1, 2, 3, 4, 5};
-        System.out.println("Input: " + Arrays.toString(nums) + " Output:" + Arrays.toString(twoSumTwoPointerSolve(nums, 5)));
+        int[] input = {1, 2, 3, 4, 5};
+        int target = 5;
+        solve(input, target);
 
 //        nums = {1, 2, 3, 4, 5};
-        System.out.println("Input: " + Arrays.toString(nums) + " Output:" + Arrays.toString(twoSumTwoPointerSolve(nums, 4)));
+        target = 4;
+        solve(input, target);
 
-        nums = new int[]{};
-        System.out.println("Input: " + Arrays.toString(nums) + " Output:" + Arrays.toString(twoSumTwoPointerSolve(nums, 4)));
+        input = new int[]{};
+        target = 5;
+        solve(input, target);
     }
 }

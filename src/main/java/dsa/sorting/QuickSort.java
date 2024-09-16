@@ -1,5 +1,7 @@
 package dsa.sorting;
 
+import java.util.Arrays;
+
 public class QuickSort implements Sorting {
     public static int partition(int[] arr, int start, int end) {
         int pivot = arr[end];
@@ -24,7 +26,7 @@ public class QuickSort implements Sorting {
     public void helper(int[] arr, int start, int end) {
         if (start < end) {
             int pivotIdx = partition(arr, start, end);
-            //dsa.sorting rest of the parts after putting pivot in correct position
+            //sorting rest of the parts after putting pivot in correct position
             helper(arr, start, pivotIdx - 1);
             helper(arr, pivotIdx + 1, end);
         }
@@ -35,20 +37,22 @@ public class QuickSort implements Sorting {
         helper(arr, 0, arr.length - 1);
     }
 
-    public static void main(String[] args) {
-        int[] a = new int[]{1, 3, 5, 7, 9};
-        int[] b = new int[]{2, 4, 6, 8};
-        int[] unsorted = new int[]{2, 1, 4, 3, 6, 5, 8, 7, 9};
+    private static void solve(int[] input){
+        System.out.println("Input: " + Arrays.toString(input));
         Sorting quickSort = new QuickSort();
-        quickSort.sort(unsorted);
-        printArray(unsorted);
+        quickSort.sort(input);
+        System.out.println("Ouput: " + Arrays.toString(input) + "\n");
     }
 
-    public static void printArray(int[] A) {
-        for (int a : A) {
-            System.out.print(a + " ");
-        }
-        System.out.println(" ");
+    public static void main(String[] args) {
+        int[] unsorted = new int[]{2, 1, 4, 3, 6, 5, 8, 7, 9};
+        solve(unsorted);
+
+        unsorted = new int[]{5};
+        solve(unsorted);
+
+        unsorted = new int[]{};
+        solve(unsorted);
     }
 
 }

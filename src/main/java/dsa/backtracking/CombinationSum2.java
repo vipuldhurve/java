@@ -55,10 +55,10 @@ public class CombinationSum2 {
     private static void solve(int[] candidates, int target) {
 //        Sort input array
         Arrays.sort(candidates);
-        System.out.println("Input: " + Arrays.toString(candidates) + " Target = " + target);
+        System.out.println("INPUT: " + Arrays.toString(candidates) + " Target = " + target);
         result = new ArrayList<>();
         findCombinations(candidates, 0, target, new ArrayList<>());
-        System.out.println("Output: " + result.toString() + "\n");
+        System.out.println("OUTPUT: " + result.toString() + "\n");
         System.out.println();
     }
 

@@ -19,7 +19,7 @@ public class KthSmallestAndLargestElement {
 
 
     //    Time Complexity - N*log(K)
-    public static int kthSmallest(int[] nums, int k) {
+    private static int kthSmallest(int[] nums, int k) {
 //        For kth smallest we need a maxHeap for removing elements greater than k
         PriorityQueue<Integer> maxHeap = new PriorityQueue<>(Comparator.reverseOrder());
 
@@ -34,7 +34,7 @@ public class KthSmallestAndLargestElement {
     }
 
     //    Time Complexity - N*log(K)
-    public static int kthLargest(int[] nums, int k) {
+    private static int kthLargest(int[] nums, int k) {
 //        For kth largest we need a minHeap for removing elements smaller than k
         PriorityQueue<Integer> minHeap = new PriorityQueue<>();
 
@@ -52,7 +52,7 @@ public class KthSmallestAndLargestElement {
     public static void main(String[] args) {
         int[] nums = new int[]{7, 10, 4, 3, 2, 5, 8, 20, 15};
         int[] kValues = new int[]{3, 4};
-        System.out.println("Input: " + Arrays.toString(nums) + "\n");
+        System.out.println("INPUT: " + Arrays.toString(nums) + "\n");
         Arrays.stream(kValues)
                 .forEach(k -> {
                     int kthSmallest = kthSmallest(nums, k);

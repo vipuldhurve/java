@@ -17,7 +17,7 @@ public class TopKFrequentElements {
 //    Input: nums = [1], k = 1
 //    Output: [1]
 
-    static class Element {
+    private static class Element {
         int freq;
         int val;
 
@@ -28,7 +28,7 @@ public class TopKFrequentElements {
     }
 
 
-    public static int[] kFrequent(int[] arr, int k) {
+    private static int[] kFrequent(int[] arr, int k) {
         //Creating a map of elements and there frequency
         Map<Integer, Integer> m = Arrays.stream(arr)
                 .boxed()
@@ -59,26 +59,20 @@ public class TopKFrequentElements {
         return kFrequent;
     }
 
+    private static void solve(int[] input, int k){
+        System.out.println("INPUT: " + Arrays.toString(input) + "  k = " + k);
+        System.out.println("OUTPUT: " + Arrays.toString(kFrequent(input, k)) +"\n");
+    }
+
 
     public static void main(String[] args) {
-        int[] arr = new int[]{1, 1, 1, 2, 2, 3};
+        int[] input = new int[]{1, 1, 1, 2, 2, 3};
         int k = 2;
-        System.out.println("Input: " + Arrays.toString(arr) + "  k = " + k);
-        System.out.println("Output: " + Arrays.toString(kFrequent(arr, k)));
-        System.out.println();
+        solve(input, k);
 
-        arr = new int[]{1};
+        input = new int[]{1};
         k = 1;
-        System.out.println("Input: " + Arrays.toString(arr) + "  k = " + k);
-        int[] a = kFrequent(arr, k);
-        System.out.println("Output: " + Arrays.toString(kFrequent(arr, k)));
-        System.out.println();
+        solve(input, k);
     }
 
-    public static void printArray(int[] A) {
-        for (int a : A) {
-            System.out.print(a + " ");
-        }
-        System.out.println(" ");
-    }
 }

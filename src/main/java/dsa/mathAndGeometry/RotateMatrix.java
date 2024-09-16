@@ -1,5 +1,7 @@
 package dsa.mathAndGeometry;
 
+import dsa.util.Printer;
+
 public class RotateMatrix {
 //    Given a square n x n matrix of integers matrix,
 //    rotate it by 90 degrees clockwise.
@@ -102,19 +104,36 @@ public class RotateMatrix {
         }
     }
 
+    private static void solve(int[][] input) {
+//        Print input
+        System.out.println("------------- INPUT ------------- ");
+        Printer.printIntMatrix(input);
+//       Rotate Clockwise
+        rotateMatrixClockwise(input);
+        System.out.println("--------------- Clockwise: ");
+        Printer.printIntMatrix(input);
+//       Rotate Anti-clockwise
+        rotateMatrixAntiClockwise(input);
+        rotateMatrixAntiClockwise(input);
+        System.out.println("--------------- Anti-clockwise: ");
+        Printer.printIntMatrix(input);
+        System.out.println("--------------------------------");
+        System.out.print("-------------------------------- \n\n\n\n");
+    }
+
     public static void main(String[] args) {
         int[][] input = new int[][]{
                 {1, 2},
                 {3, 4}
         };
-        solveAndPrint(input);
+        solve(input);
 
         input = new int[][]{
                 {1, 2, 3},
                 {4, 5, 6},
                 {7, 8, 9}
         };
-        solveAndPrint(input);
+        solve(input);
 
         input = new int[][]{
                 {5, 1, 9, 11},
@@ -122,30 +141,7 @@ public class RotateMatrix {
                 {13, 3, 6, 7},
                 {15, 14, 12, 16}
         };
-        solveAndPrint(input);
+        solve(input);
     }
 
-    private static void solveAndPrint(int[][] input) {
-//        Print input
-        System.out.println("------------- Input ------------- ");
-        printMatrix(input);
-//       Rotate Clockwise
-        rotateMatrixClockwise(input);
-        System.out.println("--------------- Clockwise: ");
-        printMatrix(input);
-//       Rotate Anti-clockwise
-        rotateMatrixAntiClockwise(input);
-        rotateMatrixAntiClockwise(input);
-        System.out.println("--------------- Anti-clockwise: ");
-        printMatrix(input);
-        System.out.println("--------------------------------");
-        System.out.print("-------------------------------- \n\n\n\n");
-    }
-
-    private static void printMatrix(int[][] matrix) {
-        for (int i = 0; i < matrix.length; i++) {
-            for (int x : matrix[i]) System.out.print(x + "   ");
-            System.out.println();
-        }
-    }
 }

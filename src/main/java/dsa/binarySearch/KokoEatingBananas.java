@@ -24,21 +24,7 @@ public class KokoEatingBananas {
 //    Input: piles = [25,10,23,4], h = 4
 //    Output: 25
 
-
-    private static int findMax(int[] piles) {
-        int maxPile = Integer.MIN_VALUE;
-        for (int pile : piles) maxPile = Math.max(maxPile, pile);
-        return maxPile;
-    }
-
-    private static int calculateTotalHours(int[] piles, int speed) {
-        int totalHours = 0;
-        for (int pile : piles) {
-            totalHours += Math.ceil((double) pile / (double) speed);
-        }
-        return totalHours;
-    }
-
+//    TIME COMPLEXITY: O(NlogN) | SPACE COMPLEXITY: O(1)
     private static int minEatingSpeed(int[] piles, int hours) {
         int n = piles.length;
 //        if there are 4 piles koko will need at least 4 i.e. piles.length hours
@@ -57,8 +43,8 @@ public class KokoEatingBananas {
 //            Calculate totalHours taken with speed = mid
             int totalHours = calculateTotalHours(piles, mid);
 //            Find minimum speed if a valid speed found
-            if (totalHours <= hours) high = mid - 1;
-            else low = mid + 1;
+            if (totalHours > hours) low = mid+1;
+            else high = mid - 1;
         }
 //        We can also use an ans variable to store valid speed
 //        and then optimize to minimum valid speed
@@ -66,9 +52,23 @@ public class KokoEatingBananas {
         return low;
     }
 
+    private static int findMax(int[] piles) {
+        int maxPile = Integer.MIN_VALUE;
+        for (int pile : piles) maxPile = Math.max(maxPile, pile);
+        return maxPile;
+    }
+
+    private static int calculateTotalHours(int[] piles, int speed) {
+        int totalHours = 0;
+        for (int pile : piles) {
+            totalHours += Math.ceil((double) pile / (double) speed);
+        }
+        return totalHours;
+    }
+
     private static void solve(int[] piles, int hours) {
-        System.out.println("Banana Piles: [" + Arrays.toString(piles) + "]  hours = " + hours);
-        System.out.println("Minimum Speed: "
+        System.out.println("BANANA PILES: " + Arrays.toString(piles) + "  HOURS = " + hours);
+        System.out.println("MINIMUM SPEED: "
                 + minEatingSpeed(piles, hours) + "\n");
     }
 

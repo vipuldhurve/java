@@ -18,7 +18,7 @@ public class RotateArray {
 //    Input: nums = [-1,-100,3,99], k = 2
 //    Output: [3,99,-1,-100]
 
-    //  Solution1:  Time complexity: O(n) | Space complexity: O(n)
+    //  Solution1:  Time complexity: O(N) | Space complexity: O(N)
     private static void rotateArray1(int[] nums, int k) {
         int n = nums.length;
         k = k % n;
@@ -36,7 +36,7 @@ public class RotateArray {
         }
     }
 
-    //  Solution2:  Time complexity: O(n) | Space complexity: O(n)
+    //  Solution2:  Time complexity: O(N) | Space complexity: O(N)
     private static void rotateArray2(int[] nums, int k) {
         int n = nums.length;
         k = k % n;
@@ -57,7 +57,7 @@ public class RotateArray {
         System.arraycopy(rotated, 0, nums, 0, n);
     }
 
-    //   Solution3: Time complexity: O(n) | Space complexity: O(1)
+    //   Solution3: Time complexity: O(N) | Space complexity: O(1)
     private static void rotateArray3(int[] nums, int k) {
         int n = nums.length;
         k = k % n;
@@ -75,7 +75,6 @@ public class RotateArray {
         reverse(nums, 0, n - 1);
         reverse(nums, 0, k - 1);
         reverse(nums, k, n - 1);
-
     }
 
     private static void reverse(int[] nums, int start, int end) {
@@ -98,21 +97,21 @@ public class RotateArray {
     public static void main(String[] args) {
         int[] input = new int[]{1, 2, 3, 4, 5, 6, 7};
         int k = 3;
-        System.out.println("Input: " + Arrays.toString(input));
+        System.out.println("INPUT: " + Arrays.toString(input));
         rotateArray1(input, k);
-        System.out.println("Output: " + Arrays.toString(input) + "\n");
+        System.out.println("OUTPUT: " + Arrays.toString(input) + "\n");
 
         input = new int[]{99, -1, -100, 3};
         k = 2;
-        System.out.println("Input: " + Arrays.toString(input));
+        System.out.println("INPUT: " + Arrays.toString(input));
         rotateArray2(input, 2);
-        System.out.println("Output: " + Arrays.toString(input) + "\n");
+        System.out.println("OUTPUT: " + Arrays.toString(input) + "\n");
 
         input = new int[]{1, 2, 3, 4, 5, 6, 7};
         k = 5;
-        System.out.println("Input: " + Arrays.toString(input));
+        System.out.println("INPUT: " + Arrays.toString(input));
         rotateArray3(input, k);
-        System.out.println("Output: " + Arrays.toString(input) + "\n");
+        System.out.println("OUTPUT: " + Arrays.toString(input) + "\n");
     }
 
 }

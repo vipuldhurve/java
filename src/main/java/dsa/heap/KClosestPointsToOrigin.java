@@ -1,5 +1,6 @@
 package dsa.heap;
 
+import java.util.Arrays;
 import java.util.Comparator;
 import java.util.PriorityQueue;
 
@@ -21,7 +22,7 @@ public class KClosestPointsToOrigin {
 //    Output: [[3,3],[-2,4]]
 
 
-    static class Node {
+    private static class Node implements Comparable<Node>{
         int[] point;
         int dist;
 
@@ -29,6 +30,12 @@ public class KClosestPointsToOrigin {
             this.point = point;
             this.dist = dist;
         }
+
+        @Override
+        public int compareTo(Node o) {
+            return Integer.compare(o.dist, this.dist);
+        }
+
 
         static class NodeRevComparator implements Comparator<Node> {
             @Override
@@ -40,7 +47,7 @@ public class KClosestPointsToOrigin {
     }
 
 
-    public static int[][] kClosestPointsToOrigin(int[][] points, int k) {
+    private static int[][] kClosestPointsToOrigin(int[][] points, int k) {
 //        To remove elements of greater distance we need maxHeap
         PriorityQueue<Node> maxHeap = new PriorityQueue<>(new Node.NodeRevComparator());
         for (int[] point : points) {
@@ -57,41 +64,27 @@ public class KClosestPointsToOrigin {
         return kClosestPoints;
     }
 
-    public static void solveAndPrint(int[][] arr, int k) {
-        System.out.print("Input:  k = " + k + " and ");
-        printNestedArray(arr);
-        System.out.print("Output: ");
-        printNestedArray(kClosestPointsToOrigin(arr, k));
-        System.out.println();
+    private static void solve(int[][] input, int k) {
+        System.out.println("INPUT: "+ Arrays.deepToString(input) +" and  k = " + k);
+        System.out.println("OUTPUT: " + Arrays.deepToString(kClosestPointsToOrigin(input, k)) +"\n");
     }
 
 
     public static void main(String[] args) {
-        int[][] arr = new int[][]{
+        int[][] input = new int[][]{
                 {3, 3},
                 {5, -1},
                 {-2, 4}
         };
         int k = 2;
-        solveAndPrint(arr, k);
+        solve(input, k);
 
-        arr = new int[][]{
+        input = new int[][]{
                 {1, 3},
                 {-2, 2}
         };
         k = 1;
-        solveAndPrint(arr, k);
-    }
-
-    public static void printNestedArray(int[][] A) {
-        for (int[] a : A) {
-            System.out.print("[");
-            for (int b : a) {
-                System.out.print(b + " ");
-            }
-            System.out.print("]  ");
-        }
-        System.out.println(" ");
+        solve(input, k);
     }
 
 }

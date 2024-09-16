@@ -19,10 +19,14 @@ public class threeSum {
 
 //    Input: nums = [0,0,0]
 //    Output: [[0,0,0]]
+
+    //    TIME COMPLEXITY: O(N*N) + O(NlogN)   |   SPACE COMPLEXITY: O(1)
     private static ArrayList<int[]> threeSumSolve(int[] nums) {
         ArrayList<int[]> result = new ArrayList<>();
 
+//        To avoid duplicates we sort the array
         Arrays.sort(nums);
+
         for (int i = 0; i < nums.length; i++) {
 //            If nums[i] is same for previous we do i++ in order to avoid duplicates
             if (i > 0 && nums[i] == nums[i - 1]) continue;
@@ -55,7 +59,7 @@ public class threeSum {
 
     public static void solve(int[] nums) {
         System.out.println("Input: ");
-        System.out.println( Arrays.toString(nums));
+        System.out.println(Arrays.toString(nums));
         ArrayList<int[]> output = threeSumSolve(nums);
 
         System.out.println("Output:");
