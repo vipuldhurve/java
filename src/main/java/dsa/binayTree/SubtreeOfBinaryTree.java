@@ -38,6 +38,17 @@ public class SubtreeOfBinaryTree {
     //    TIME COMPLEXITY: O(N * M)
     //    where N is the number of nodes in root,
     //    and M is the number of nodes in subRoot.
+    private static boolean isSubTree(TreeNode root, TreeNode subRoot) {
+//        null is always a subTree of root
+        if (subRoot == null) return true;
+//        If root is null, not possible
+        if (root == null) return false;
+//        If subTree is same as tree
+//        OR If subTree is same as tree's left part or right part
+        return isSameTree(root, subRoot)
+                || isSubTree(root.left, subRoot)
+                || isSubTree(root.right, subRoot);
+    }
 
     private static boolean isSameTree(TreeNode rootA, TreeNode rootB) {
 //        If both nodes are null
@@ -49,18 +60,6 @@ public class SubtreeOfBinaryTree {
         return rootA.val == rootB.val
                 && isSameTree(rootA.left, rootB.left)
                 && isSameTree(rootA.right, rootB.right);
-    }
-
-    private static boolean isSubTree(TreeNode root, TreeNode subRoot) {
-//        null is always a subTree of root
-        if (subRoot == null) return true;
-//        If root is null, not possible
-        if (root == null) return false;
-//        If subTree is same as tree
-//        OR If subTree is same as tree's left part or right part
-        return isSameTree(root, subRoot)
-                || isSubTree(root.left, subRoot)
-                || isSubTree(root.right, subRoot);
     }
 
     private static void solve(Integer[] levelOrderTree, Integer[] levelOrderSubtree) {

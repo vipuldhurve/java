@@ -33,6 +33,7 @@ public class BalancedBinaryTree {
 //       4   4
 //    OUTPUT: false
 
+    //    TIME COMPLEXITY: O(N), where N is the number of nodes in root,
     private static int isBalanced(TreeNode root) {
 //        Method will return maximum length of left or right part of tree
 //        Or -1 if either side is not height balanced
