@@ -1,9 +1,11 @@
 package dsa.stack;
 
+import java.util.Arrays;
 import java.util.Stack;
 
 public class NearestGreater {
 
+    //    TIME COMPLEXITY: O(N)   |   SPACE COMPLEXITY: O(N)
     public static int[] nearestGreaterToRight(int[] arr) {
         int n = arr.length;
         Stack<Integer> s = new Stack<>();
@@ -33,6 +35,7 @@ public class NearestGreater {
         return ngRight;
     }
 
+    //    TIME COMPLEXITY: O(N)   |   SPACE COMPLEXITY: O(N)
     public static int[] nearestGreaterToLeft(int[] arr) {
         int n = arr.length;
         Stack<Integer> s = new Stack<>();
@@ -63,22 +66,15 @@ public class NearestGreater {
         return ngLeft;
     }
 
-
-    public static void main(String[] args) {
-        int[] arr = new int[]{4, 5, 1, 2, 3, 5};
-        System.out.print("Input: ");
-        printArray(arr);
-        System.out.print("Nearest greater to right: ");
-        printArray(nearestGreaterToRight(arr));
-        System.out.print("Nearest greater to left: ");
-        printArray(nearestGreaterToLeft(arr));
+    private static void solve(int[] input){
+        System.out.println("INPUT: " + Arrays.toString(input));
+        System.out.println("Nearest greater to right: " + Arrays.toString(nearestGreaterToRight(input)));
+        System.out.println("Nearest greater to left: " + Arrays.toString(nearestGreaterToLeft(input)) +"\n");
     }
 
-    public static void printArray(int[] A) {
-        for (int a : A) {
-            System.out.print(a + " ");
-        }
-        System.out.println(" ");
+    public static void main(String[] args) {
+        int[] input = new int[]{4, 5, 1, 2, 3, 5};
+        solve(input);
     }
 
 }

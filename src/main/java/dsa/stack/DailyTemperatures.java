@@ -26,13 +26,13 @@ public class DailyTemperatures {
     //    Helper class to store temperature value and its index in array
     private static class Pair {
         int temp, index;
-
         public Pair(int temp, int index) {
             this.temp = temp;
             this.index = index;
         }
     }
 
+    //    TIME COMPLEXITY: O(N)   |   SPACE COMPLEXITY: O(N)
     private static int[] dailyTemperatures(int[] temperatures) {
 //        A stack to get the next greater to right
         Stack<Pair> stack = new Stack<>();
@@ -56,20 +56,14 @@ public class DailyTemperatures {
     }
 
     public static void main(String[] args) {
-        int[][] temperatures = new int[][]{
+        int[][] input = new int[][]{
                 {30, 38, 30, 36, 35, 40, 28},
                 {22, 21, 20}
         };
 
-        Map<int[], int[]> resultMap = Arrays.stream(temperatures)
-                .collect(Collectors.toMap(
-                        x -> x,
-                        DailyTemperatures::dailyTemperatures
-                ));
-
-
-        resultMap.forEach((key, val) ->
-                System.out.println("Input: " + Arrays.toString(key) + "\nOuput: " + Arrays.toString(val) + "\n")
-        );
+        Arrays.stream(input)
+                .peek(i -> System.out.println("INPUT: " + Arrays.toString(i)))
+                .map(arr -> dailyTemperatures(arr))
+                .forEach(o -> System.out.println("OUTPUT: " + Arrays.toString(o) + "\n"));
     }
 }

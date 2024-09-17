@@ -20,11 +20,28 @@ public class MaximumAreaOfHistogram {
     static class Node {
         int val;
         int index;
-
         Node(int val, int index) {
             this.index = index;
             this.val = val;
         }
+    }
+
+    //    TIME COMPLEXITY: O(N)   |   SPACE COMPLEXITY: O(N)
+    public static int maximumAreaOfHistogram(int[] heights) {
+//        Calculate index of nearest smaller to left
+        int[] nsl = nearestSmallerToLeft(heights);
+//        Calculate index of nearest smaller to right
+        int[] nsr = nearestSmallerToRight(heights);
+
+        int mah = Integer.MIN_VALUE;
+//        Max width up to which a bar can be extended
+//        width[i] = nsr[i]-nsl[i]-1
+        for (int i = 0; i < heights.length; i++) {
+            mah = Math.max(mah, (nsr[i] - nsl[i] - 1) * heights[i]);
+        }
+
+        if (mah == Integer.MIN_VALUE) return 0;
+        return mah;
     }
 
     public static int[] nearestSmallerToLeft(int[] heights) {
@@ -74,24 +91,6 @@ public class MaximumAreaOfHistogram {
         return result;
     }
 
-    public static int maximumAreaOfHistogram(int[] heights) {
-//        Calculate index of nearest smaller to left
-        int[] nsl = nearestSmallerToLeft(heights);
-//        Calculate index of nearest smaller to right
-        int[] nsr = nearestSmallerToRight(heights);
-
-        int mah = Integer.MIN_VALUE;
-//        Max width up to which a bar can be extended
-//        width[i] = nsr[i]-nsl[i]-1
-        for (int i = 0; i < heights.length; i++) {
-            mah = Math.max(mah, (nsr[i] - nsl[i] - 1) * heights[i]);
-        }
-
-        if (mah == Integer.MIN_VALUE) return 0;
-        return mah;
-    }
-
-
     public static void main(String[] args) {
         int[][] input = new int[][]{
                 {6, 2, 5, 4, 5, 1, 6},
@@ -99,24 +98,10 @@ public class MaximumAreaOfHistogram {
                 {2, 4}
         };
 
-        int[] result = Arrays.stream(input)
+        Arrays.stream(input)
+                .peek(i -> System.out.println("INPUT: " + Arrays.toString(i)))
                 .mapToInt(arr -> maximumAreaOfHistogram(arr))
-                .toArray();
-
-        for (int i = 0; i < input.length; i++) {
-            System.out.print("Input: ");
-            printArray(input[i]);
-            System.out.print("Maximum Area of Histogram: ");
-            System.out.println(result[i]);
-            System.out.println();
-        }
-    }
-
-    public static void printArray(int[] A) {
-        for (int a : A) {
-            System.out.print(a + " ");
-        }
-        System.out.println(" ");
+                .forEach(o -> System.out.println("MAXIMUM AREA OF HISTOGRAM: " + o + "\n"));
     }
 
 }

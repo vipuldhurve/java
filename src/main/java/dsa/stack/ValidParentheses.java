@@ -29,7 +29,7 @@ public class ValidParentheses {
     }
 
     public static void main(String[] args) {
-        String[] inputArray = new String[]{
+        String[] input = new String[]{
                 "()",
                 "(){}[]",
                 "(]",
@@ -37,14 +37,9 @@ public class ValidParentheses {
                 "(()}",
                 ""
         };
-        Map<String, Boolean> resultMap = Arrays.stream(inputArray)
-                .collect(Collectors.toMap(
-                        x -> x,
-                        ValidParentheses::validParentheses
-                ));
 
-        resultMap.forEach((key, val) -> System.out.println(
-                "Input: \"" + key + "\"\nisValid: " + val + "\n"
-        ));
+        Arrays.stream(input)
+                .peek(i -> System.out.println("INPUT: \"" + i + "\""))
+                .forEach(i -> System.out.println("IS VALID: " + validParentheses(i) + "\n"));
     }
 }

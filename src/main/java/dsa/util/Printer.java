@@ -12,6 +12,14 @@ public class Printer {
         }
     }
 
+    // Prints Char Matrix In A WELL Formatted Grid
+    public static void printCharMatrix(char[][] arr) {
+        for (char[] x : arr) {
+            for (char y : x) System.out.print(y + "   ");
+            System.out.println();
+        }
+    }
+
     // Prints Graph Nodes And Neighbors
     public static void printGraphNodes(GraphNode node) {
         Set<GraphNode> visitedGraphNode = new HashSet<>();

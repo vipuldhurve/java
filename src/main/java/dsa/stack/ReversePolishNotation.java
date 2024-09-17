@@ -16,6 +16,7 @@ public class ReversePolishNotation {
 //    Output: 5
 //    Explanation: ((1 + 2) * 3) - 4 = 5
 
+    //    TIME COMPLEXITY: O(N)   |   SPACE COMPLEXITY: O(N)
     private static int reversePolishNotation(String[] tokens) {
         Stack<Integer> stack = new Stack<>();
         for (int i = 0; i < tokens.length; i++) {
@@ -34,9 +35,14 @@ public class ReversePolishNotation {
         return stack.peek();
     }
 
+    private static void solve(String[] input){
+        System.out.println("INPUT: " + Arrays.toString(input));
+        System.out.println("OUTPUT: " + reversePolishNotation(input) + "\n");
+    }
+
     public static void main(String[] args) {
-        String[] inputArray = new String[]{"1", "2", "+", "3", "*", "4", "-"};
-        System.out.println("Input: " + Arrays.toString(inputArray) + "\nOutput: " + reversePolishNotation(inputArray));
+        String[] input = new String[]{"1", "2", "+", "3", "*", "4", "-"};
+        solve(input);
     }
 
 }
