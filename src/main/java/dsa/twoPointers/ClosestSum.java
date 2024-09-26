@@ -10,7 +10,7 @@ public class ClosestSum {
 //     Input: nums = [-1,2,1,-4], target = 1
 //    Output: 2
 
-    private static int solve(int[] nums, int target) {
+    private static int closestSum(int[] nums, int target) {
 //        Sort array for three pointers
         Arrays.sort(nums);
         int n = nums.length;
@@ -39,10 +39,19 @@ public class ClosestSum {
         return ansSum;
     }
 
+    private static void solve(int[] nums, int target){
+        System.out.println("INPUT: " + Arrays.toString(nums) + "  target = " + target);
+        System.out.println("OUTPUT: " + closestSum(nums, target) + "\n");
+    }
+
     public static void main(String[] args) {
         int[] nums = {-1, 2, 1, -4};
         int target = 1;
-        System.out.println(solve(nums, target));
+        solve(nums, target);
+
+        nums = new int[]{2,1,4};
+        target = 1;
+        solve(nums, target);
     }
 
 }
