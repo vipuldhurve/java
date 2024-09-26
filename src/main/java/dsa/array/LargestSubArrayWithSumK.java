@@ -17,7 +17,7 @@ public class LargestSubArrayWithSumK {
 //    Input : arr[] = {1, 2, 3}, k = 6
 //    Output : 0
 
-//    Input: arr[] = {4, 1, 1, -2, 1};
+//    Input: arr[] = {4, 1, 1, -2, 1, 5};
 //    Output = 5
 
     //    TIME COMPLEXITY: O(N)   |   SPACE COMPLEXITY: O(N)
@@ -70,7 +70,7 @@ public class LargestSubArrayWithSumK {
         sum = 15;
         solve(nums, sum);
 
-        nums = new int[]{4, 1, 1, -2, 1};
+        nums = new int[]{4, 1, 1, -2, 1, 5};
         sum = 5;
         solve(nums, sum);
     }

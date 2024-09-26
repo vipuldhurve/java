@@ -12,7 +12,7 @@ public class Printer {
         }
     }
 
-    // Prints Char Matrix In A WELL Formatted Grid
+    // Prints CHAR Matrix In A WELL Formatted Grid
     public static void printCharMatrix(char[][] arr) {
         for (char[] x : arr) {
             for (char y : x) System.out.print(y + "   ");
