@@ -35,6 +35,16 @@ public class Printer {
         }
     }
 
+    // Prints linked list i.e. LIST-NODEs
+    public static void printLinkedList(ListNode head) {
+        ListNode current = head;
+        while (current != null) {
+            System.out.print(current.val + " -> ");
+            current = current.next;
+        }
+        System.out.println("null");
+    }
+
     // Prints Binary Tree Structure
     public static void printBinaryTree(TreeNode root) {
         if (root == null) return;

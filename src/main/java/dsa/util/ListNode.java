@@ -1,8 +1,8 @@
-package dsa.linkedList;
+package dsa.util;
 
 public class ListNode<T> {
-    T val;
-    ListNode next;
+    public T val;
+    public ListNode next;
 
     public ListNode() {
     }
@@ -75,14 +75,4 @@ public class ListNode<T> {
         }
         return createLinkedList(boxedValues);
     }
-
-    public static void printLinkedList(ListNode head) {
-        ListNode current = head;
-        while (current != null) {
-            System.out.print(current.val + " -> ");
-            current = current.next;
-        }
-        System.out.println("null");
-    }
-
 }

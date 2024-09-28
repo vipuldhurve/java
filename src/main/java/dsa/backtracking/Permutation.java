@@ -64,23 +64,23 @@ public class Permutation {
         List<List<Integer>> sortedResult = new ArrayList<>();
         boolean[] used = new boolean[nums.length];
         List<Integer> permutation = new ArrayList<>();
-        sortedPermuteBacktrack(nums, permutation, used, sortedResult);
+        sortedUniquePermuteBacktrack(nums, permutation, used, sortedResult);
         return sortedResult;
     }
 
-    private static void sortedPermuteBacktrack(int[] nums, List<Integer> permutation, boolean[] used, List<List<Integer>> result) {
+    private static void sortedUniquePermuteBacktrack(int[] nums, List<Integer> permutation, boolean[] used, List<List<Integer>> result) {
         if (permutation.size() == nums.length) {
             result.add(new ArrayList<>(permutation));
             return;
         }
         for (int i = 0; i < nums.length; i++) {
-//            Skip used elements
-            if (used[i]) continue;
+//            Skip used elements and skip all elements which are same as the used element
+            if (used[i] || (i - 1 >= 0 && used[i - 1] && nums[i - 1] == nums[i])) continue;
 //            Add element in permutation and mark used
             permutation.add(nums[i]);
             used[i] = true;
 //            Recursively build rest of the permutation
-            sortedPermuteBacktrack(nums, permutation, used, result);
+            sortedUniquePermuteBacktrack(nums, permutation, used, result);
 //            Backtrack: remove nums[i] and mark it as unused
             permutation.remove(permutation.size() - 1);
             used[i] = false;
@@ -90,6 +90,7 @@ public class Permutation {
     public static void main(String[] args) {
         int[][] input = new int[][]{
                 {1, 2, 3},
+                {1, 1, 2},
                 {7}
         };
         Arrays.stream(input)

@@ -1,5 +1,8 @@
 package dsa.linkedList;
 
+import dsa.util.ListNode;
+import dsa.util.Printer;
+
 public class RemoveDuplicatesFromSortedList {
 //    Given the head of a sorted linked list,
 //    delete all duplicate numbers,
@@ -38,11 +41,11 @@ public class RemoveDuplicatesFromSortedList {
 //        Create input linked list and print
         ListNode head = ListNode.createLinkedList(values);
         System.out.println("INPUT:");
-        ListNode.printLinkedList(head);
+        Printer.printLinkedList(head);
 //        Remove duplicates from linked list and print output
         head = removeDuplicates1(head);
         System.out.println("OUTPUT:");
-        ListNode.printLinkedList(head);
+        Printer.printLinkedList(head);
         System.out.println();
     }
 
