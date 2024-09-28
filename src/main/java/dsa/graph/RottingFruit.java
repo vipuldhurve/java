@@ -51,16 +51,17 @@ public class RottingFruit {
                     int newRow = cell[0] + direction[0];
                     int newCol = cell[1] + direction[1];
 //                    If neighbor cell has fresh fruit
-                    if (newRow >= 0 && newRow < grid.length
-                            && newCol >= 0 && newCol < grid[0].length
+                    if (newRow >= 0 && newRow < grid.length && newCol >= 0 && newCol < grid[0].length
                             && grid[newRow][newCol] == 1) {
-                        queue.add(new int[]{newRow, newCol});
 //                        fresh fruit becomes rotten
                         grid[newRow][newCol] = 2;
+//                        add rotten fruit to queue
+                        queue.add(new int[]{newRow, newCol});
                     }
                 }
             }
-//            If another level of rotten fruits added
+//            If another level of fresh fruits becoming rotten fruits added
+//            i.e. which will need 1 minute to become rotten
             if (queue.size() > 0) minutes++;
         }
 
@@ -90,6 +91,12 @@ public class RottingFruit {
                 {1, 0, 1},
                 {0, 2, 0},
                 {1, 0, 1}
+        };
+        solve(grid);
+
+
+        grid = new int[][]{
+                {2}
         };
         solve(grid);
     }

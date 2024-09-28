@@ -1,6 +1,7 @@
 package dsa.linkedList;
 
 import java.util.LinkedList;
+import java.util.List;
 
 public class RemoveDuplicatesFromSortedList2 {
 //    Given the head of a sorted linked list,
@@ -14,7 +15,7 @@ public class RemoveDuplicatesFromSortedList2 {
 //    Input: head = [1,1,1,2,3]
 //    Output: [2,3]
 
-    private static ListNode removeDuplicates(ListNode head) {
+    private static ListNode removeDuplicates2(ListNode head) {
         ListNode preHead = new ListNode(-1, head), prev = preHead;
 
         ListNode start = head, end = head;
@@ -42,17 +43,20 @@ public class RemoveDuplicatesFromSortedList2 {
     private static void solve(int[] values) {
 //        Create input linked list and print
         ListNode head = ListNode.createLinkedList(values);
-        System.out.println("Input:");
+        System.out.println("INPUT:");
         ListNode.printLinkedList(head);
 //        Remove duplicates from linked list and print output
-        head = removeDuplicates(head);
-        System.out.println("Output:");
+        head = removeDuplicates2(head);
+        System.out.println("OUTPUT:");
         ListNode.printLinkedList(head);
         System.out.println();
     }
 
     public static void main(String[] args) {
         int[] input = new int[]{1, 1, 1, 2, 3, 3, 4, 5, 5};
+        solve(input);
+
+        input = new int[]{1, 1, 1, 2, 3};
         solve(input);
     }
 }

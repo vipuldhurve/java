@@ -40,8 +40,8 @@ public class PlusOne {
         };
 
         Arrays.stream(input)
-                .peek(el -> System.out.println("Input:" + Arrays.toString(el)))
+                .peek(el -> System.out.println("INPUT:" + Arrays.toString(el)))
                 .map(PlusOne::plusOne)
-                .forEach(el -> System.out.println("Ouput: " + Arrays.toString(el) + "\n"));
+                .forEach(el -> System.out.println("OUTPUT: " + Arrays.toString(el) + "\n"));
     }
 }
