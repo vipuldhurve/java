@@ -1,4 +1,4 @@
-package streamApi;
+package streamApi.pojo;
 
 public class Student {
     private long id;
