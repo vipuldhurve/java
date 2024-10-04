@@ -53,7 +53,7 @@ public class WordWrap {
     private static void solve(int[] words, int lineLength) {
         System.out.println("INPUT:   words = " + Arrays.toString(words) + "    Line length = " + lineLength);
         dp = new int[words.length + 1][lineLength + 1];
-        for (int i = 0; i < dp.length; i++) Arrays.fill(dp[i], Integer.MAX_VALUE);
+        for (int[] ints : dp) Arrays.fill(ints, Integer.MAX_VALUE);
         System.out.println("OUTPUT: " + wordWrap(words, 0, lineLength, lineLength) + "\n");
     }
 

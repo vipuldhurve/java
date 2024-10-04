@@ -29,7 +29,7 @@ public class LongestCommonSubsequence {
     private static void solve(String s1, String s2) {
         System.out.println("INPUT:  \"" + s1 + "\" and \"" + s2 + "\"");
         dp = new int[s1.length() + 1][s2.length() + 1];
-        for (int i = 0; i < dp.length; i++) Arrays.fill(dp[i], -1);
+        for (int[] ints : dp) Arrays.fill(ints, -1);
         System.out.println("OUTPUT: " + longestCommonSubsequence(s1, s2, s1.length(), s2.length()) + "\n");
     }
 
