@@ -64,8 +64,8 @@ public class NextPermutation {
     private static void nextPermutation2(int[] nums) {
         int n = nums.length;
 
-//        f i = 0;
         int breakPoint = -1;
+        // Find the breakpoint(nums[i] > nums[i+1]) index at the most right part of array
         for (int i = n - 2; i >= 0; i--) {
             if (nums[i] < nums[i + 1]) {
                 breakPoint = i;
@@ -73,19 +73,25 @@ public class NextPermutation {
             }
         }
 
+        // If break point does not exist i.e. array is present sorted in descending order
+        // return sorted array i.e. reverse
         if (breakPoint == -1) {
             reverseArray(nums, 0, n - 1);
             return;
         }
 
+        // Find minimum element which is greater than nums[breakpoint] at the most right part of array
         int minGreaterIndex = breakPoint + 1;
         for (int i = breakPoint + 2; i < n; i++) {
             if (nums[i] > nums[breakPoint] && nums[i] <= nums[minGreaterIndex]) minGreaterIndex = i;
         }
 
+        // swap the minGreaterElement with the element at breakpoint
         int temp = nums[breakPoint];
         nums[breakPoint] = nums[minGreaterIndex];
         nums[minGreaterIndex] = temp;
+
+        // sort the array after breakpoint i.e. reverse the array after breakpoint
         reverseArray(nums, breakPoint + 1, n - 1);
     }
 
