@@ -1,4 +1,4 @@
-package dsa.stack;
+package dsa.array;
 
 import java.util.Arrays;
 import java.util.Stack;
