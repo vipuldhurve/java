@@ -33,7 +33,7 @@ public class NextPermutation {
         }
     }
 
-    // TIME COMPLEXITY: O(N + NlogN)   |   SPACE COMPLEXITY: O(N)
+    // TIME COMPLEXITY: O(N)   |   SPACE COMPLEXITY: O(N)
     private static void nextPermutation(int[] nums) {
         int n = nums.length;
         Stack<Node> stack = new Stack<>();
@@ -49,7 +49,7 @@ public class NextPermutation {
                 nums[i] = nums[swapIndex];
                 nums[swapIndex] = temp;
                 // sort sub array from i+1 to n
-                Arrays.sort(nums, i + 1, n);
+                reverseArray(nums, i + 1, n - 1);
                 return;
             }
             // store current element and index
@@ -57,7 +57,46 @@ public class NextPermutation {
             i--;
         }
         // If no possible permutation found return sorted array
-        Arrays.sort(nums);
+        reverseArray(nums, 0, n - 1);
+    }
+
+    // TIME COMPLEXITY: O(N)
+    private static void nextPermutation2(int[] nums) {
+        int n = nums.length;
+
+//        f i = 0;
+        int breakPoint = -1;
+        for (int i = n - 2; i >= 0; i--) {
+            if (nums[i] < nums[i + 1]) {
+                breakPoint = i;
+                break;
+            }
+        }
+
+        if (breakPoint == -1) {
+            reverseArray(nums, 0, n - 1);
+            return;
+        }
+
+        int minGreaterIndex = breakPoint + 1;
+        for (int i = breakPoint + 2; i < n; i++) {
+            if (nums[i] > nums[breakPoint] && nums[i] <= nums[minGreaterIndex]) minGreaterIndex = i;
+        }
+
+        int temp = nums[breakPoint];
+        nums[breakPoint] = nums[minGreaterIndex];
+        nums[minGreaterIndex] = temp;
+        reverseArray(nums, breakPoint + 1, n - 1);
+    }
+
+    private static void reverseArray(int[] nums, int start, int end) {
+        while (start < end) {
+            nums[start] = nums[start] + nums[end];
+            nums[end] = nums[start] - nums[end];
+            nums[start] = nums[start] - nums[end];
+            start++;
+            end--;
+        }
     }
 
     public static void main(String[] args) {
