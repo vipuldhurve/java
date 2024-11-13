@@ -10,13 +10,13 @@ public class AtmostKUniqueCharacters {
     private static int kUniqueCharacters(String s, int k) {
         int ans = 0;
         for (int i = 1; i <= s.length(); i++) {
-            if (!areAllKSizedSubstringValid(s, i, k)) break;
+            if (!areAllWindowSizedSubstringValid(s, i, k)) break;
             ans = i;
         }
         return ans;
     }
 
-    private static boolean areAllKSizedSubstringValid(String s, int windowSize, int k) {
+    private static boolean areAllWindowSizedSubstringValid(String s, int windowSize, int k) {
 //        window pointers
         int left = 0, right = 0;
 //
