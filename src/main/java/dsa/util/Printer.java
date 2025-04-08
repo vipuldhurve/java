@@ -12,6 +12,15 @@ public class Printer {
         }
     }
 
+    // Prints String array
+    public static void printStringArray(String[] arr) {
+        System.out.print("[ ");
+        for (String s : arr) {
+            System.out.print(s +" ");
+        }
+        System.out.println("]");
+    }
+
     // Prints CHAR Matrix In A WELL Formatted Grid
     public static void printCharMatrix(char[][] arr) {
         for (char[] x : arr) {
