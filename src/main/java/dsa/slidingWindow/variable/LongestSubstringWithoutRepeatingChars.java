@@ -24,6 +24,8 @@ public class LongestSubstringWithoutRepeatingChars {
 //    Explanation: The answer is "wke", with the length of 3.
 //    Notice that the answer must be a substring, "pwke" is a subsequence and not a substring.
 
+    // In this code we check window size and map size
+    // So in this solution we need to check for valid window while shrinking
     public static String solve(String str) {
         if (str.isEmpty()) return "";
         int left = 0;
@@ -60,9 +62,33 @@ public class LongestSubstringWithoutRepeatingChars {
 //            Otherwise increasing window size (also in case of m.size() < k)
             right++;
         }
-
         return str.substring(i, j + 1);
     }
+
+    // In this solution we don't update ans when shrinking window
+    // because it is taken care in else block in next iteration
+    public int solve2(String s) {
+        Map<Character, Integer> count = new HashMap<>();
+        int start = 0, end = 0;
+        int maxLen = 0;
+        while(end < s.length()){
+            Character key = s.charAt(end);
+            count.put(key, count.getOrDefault(key, 0) + 1);
+            if(count.get(key) > 1){
+                while(count.get(key)>1){
+                    Character startKey = s.charAt(start);
+                    count.put(startKey, count.get(startKey) - 1);
+                    if(count.get(startKey) == 0) count.remove(startKey);
+                    start++;
+                }
+            } else {
+                maxLen = Math.max(count.size(), maxLen);
+            }
+            end++;
+        }
+        return maxLen;
+    }
+
 
     public static void main(String[] args) {
         String[] inputArr = new String[]{
