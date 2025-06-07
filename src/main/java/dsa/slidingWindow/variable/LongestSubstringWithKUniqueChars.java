@@ -71,7 +71,6 @@ public class LongestSubstringWithKUniqueChars {
 
     public static void main(String[] args) {
         String str = "dxaaabcayz";
-        ArrayList<String> strList = new ArrayList<>(Arrays.asList("dxaaabcayz", "cxadabbc"));
         int k = 3;
         solve(str, k);
 
